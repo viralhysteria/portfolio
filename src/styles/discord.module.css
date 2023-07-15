@@ -1,0 +1,100 @@
+.container .scroll  {
+  --gap: 0.5rem;
+  position: relative;
+  display: flex;
+  color: var(--bs-body-color);
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-secondary-bg);
+  border-radius: 5px;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 75%);
+}
+
+.container .scroll:hover {
+  cursor: pointer;
+}
+
+.container .scroll ul {
+  list-style: none;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  margin: 5px 0;
+  animation: scroll 80s linear infinite;
+}
+
+.container .scroll ul li {
+  flex: 0 0 auto;
+  font-family: inherit;
+  background: transparent;
+  opacity: 0.8;
+  margin: 2px;
+  padding: 0 0.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  vertical-align:middle;
+}
+
+.container .scroll ul li:hover {
+  text-decoration: underline;
+}
+
+/* .container .scroll ul li:before {
+  content: "# ";
+} */
+
+.container * {
+  box-sizing: border-box;
+}
+
+.container .scroll--reverse .scroll ul {
+  animation-direction: reverse;
+}
+
+.container .scroll--hover-pause:hover .scroll ul {
+  animation-play-state: paused;
+}
+
+.container .scroll--fit-content {
+  max-width: fit-content;
+}
+
+.container .scroll--pos-absolute .scroll ul:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container .enable-animation .scroll--pos-absolute .scroll ul:last-child {
+  animation-name: scroll-abs;
+}
+
+@keyframes scroll-abs {
+  from {
+    transform: translateX(calc(100% + var(--gap)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll ul {
+    animation-play-state: paused !important;
+  }
+}
+
