@@ -34,9 +34,7 @@ export default function Portal() {
         <div className="d-flex justify-content-center">
           <main style={{ paddingTop: "10vh" }}>
             <div className="skills overflow-hidden animate__animated animate__fadeInUpBig animate__slow">
-              <div className="icons">
-                <Grid />
-              </div>
+              <Grid />
             </div>
           </main>
         </div>

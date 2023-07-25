@@ -1,0 +1,49 @@
+#oscpModal img {
+    filter: invert(100%) grayscale(100%);
+}
+
+.incomplete {
+    filter: brightness(50%);
+}
+
+.icons {
+    padding: 40px;
+    max-width: 30em;
+}
+
+.row>div {
+    text-align: center;
+    padding: 1em;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    transition: filter 1s ease-in-out;
+}
+
+.circle i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* i[class^="devicon-debian-plain"]::before,
+i[class^="devicon-python-plain"]::before {
+    font-size: 2em !important;
+} */
+
+@media (min-height: 1850px) and (min-width: 1250px) {
+    .icons {
+        max-width: 40em;
+    }
+
+    .circle {
+        width: 8em;
+        height: 8em;
+    }
+}

@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
-import DOMPurify from 'isomorphic-dompurify';
+import DOMPurify from "isomorphic-dompurify";
 import skillProps from "./skillProps";
+import styles from "../styles/skills.module.css";
 
 function Bubble(skillProps) {
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-  
+
   const rank = "★".repeat(skillProps.level);
 
   return (
     <div className="col-4">
       <div
-        className="circle hvr-pulse select"
+        className={`${styles.circle} hvr-pulse select`}
         data-bs-html="true"
         style={{ background: `${skillProps.gradient}` }}
       >
@@ -62,7 +63,9 @@ function Bubble(skillProps) {
                       __html: `Drafted using <a href="https://poe.com/sage">Sage</a>`,
                     }}
                   ></p>
-                ) : null}
+                ) : (
+                  false
+                )}
               </div>
             </div>
           </div>
@@ -77,14 +80,18 @@ export default function Grid() {
 
   for (let i = 0; i < skillProps.length; i += 3) {
     const row = (
-      <div className="row justify-content-around" key={i}>
-        {skillProps.slice(i, i + 3).map((skill) => (
-          <Bubble key={skill.id} {...skill} />
-        ))}
-      </div>
+        <div className="row justify-content-around" key={i}>
+          {skillProps.slice(i, i + 3).map((skill) => (
+            <Bubble key={skill.id} {...skill} />
+          ))}
+        </div>
     );
     rows.push(row);
   }
 
-  return <>{rows}</>;
+  return (
+    <div className="icons">
+      {rows}
+    </div>
+  )
 }

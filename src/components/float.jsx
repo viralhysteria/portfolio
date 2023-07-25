@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import nametag from "../img/nametag.png";
+// import nametag from "../img/nametag.png";
 
 export default function Nav() {
-
   return (
     <header className="position-absolute pt-4 ps-4">
       <div style={{ pointerEvents: "auto" }}>
@@ -63,7 +62,7 @@ export default function Nav() {
                 <div className="modal-footer">
                   <Image
                     className="img-fluid w-25 nametag animate__animated animate__fadeIn animate__delay-1s"
-                    src={nametag}
+                    src="/img/nametag.png"
                     alt=""
                     width="0"
                     height="0"

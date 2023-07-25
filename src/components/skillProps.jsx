@@ -7,14 +7,17 @@ const lg = "linear-gradient(180deg,";
 
 const g = {
   red: `${lg} #e35d6a 0%, #842029 100%)`,
-  blue: `${lg}  #3d8bfd 0%, #084298 100%)`,
+  blue: `${lg} #3d8bfd 0%, #084298 100%)`,
+  cyan: `${lg} #3dd5f3 0%, #087990 100%)`,
+  gray: `${lg} #ced4da 0%, #495057 100%)`,
+  pink: `${lg} #de5c9d 0%, #801f4f 100%)`,
   green: `${lg} #479f76 0%, #0f5132 100%)`,
   yellow: `${lg} #ffcd39 0%, #997404 100%)`,
   orange: `${lg} #fd9843 0%, #984c0c 100%)`,
   purple: `${lg} #8c68cd 0%, #432874 100%)`,
 };
 
-const kFwi = [
+const kFeEl = [
   "armitage",
   "autopsy",
   "brim",
@@ -40,7 +43,7 @@ const kFwi = [
   "zap",
 ];
 
-const kCli = [
+const kCuEl = [
   "capa",
   "ffuf",
   "gobuster",
@@ -55,16 +58,16 @@ const kCli = [
   "sqlmap",
 ];
 
-function kFwork() {
-  return kFwi.map((e, i) => (
+function kFrontend() {
+  return kFeEl.map((e, i) => (
     <li key={i} className="list-inline-item">
       {e.toString()}
     </li>
   ));
 }
 
-function kCmdLine() {
-  return kCli.map((e, i) => (
+function kCLIUtil() {
+  return kCuEl.map((e, i) => (
     <li key={i} className="list-inline-item">
       {e}
     </li>
@@ -105,13 +108,13 @@ const skillProps = [
       <br><br>
       I enjoy the challenge of creating designs that not only look great but also have a purpose and meaning behind them. I'm constantly exploring new techniques and software to keep up-to-date with the latest trends and innovations in the industry. Overall, my experience in traditional art and digital design, combined with my extensive Photoshop knowledge, makes me a strong asset to any team seeking a skilled and passionate graphic designer.
     </p>`,
-    level: 4,
+    level: 3,
     sage: true,
   },
   {
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
-    gradient: g.green,
+    gradient: g.red,
     useModal: true,
     title: "Technical Analysis",
     body: `<p>
@@ -131,9 +134,9 @@ const skillProps = [
     sage: true,
   },
   {
-    id: "windows",
+    id: "win",
     icon: `${di}windows8-original`,
-    gradient: g.red,
+    gradient: g.yellow,
     useModal: true,
     title: "Windows",
     body: `<p>
@@ -148,26 +151,155 @@ const skillProps = [
   },
   {
     id: "oscp",
-    icon: "fa-solid fa-dragon",
-    gradient: g.yellow,
+    icon: "fas fa-dragon",
+    gradient: g.cyan,
     useModal: true,
     title: "Pentesting w/Kali Linux",
     body: `
       <span class="fw-bold text-decoration-underline">Frameworks:</span>
       <ul class="list-inline">
-        ${renderToString(kFwork())}
+        ${renderToString(kFrontend())}
       </ul>
       <span class="fw-bold text-decoration-underline">Commandline:</span>
       <ul class="list-inline">
-        ${renderToString(kCmdLine())}
+        ${renderToString(kCLIUtil())}
       </ul>
-      <a class="text-danger fw-bold text-uppercase fs-6 pb-3 text-decoration-none"
+      <Image src="/img/thm-preview.jpg" alt="" width="50%"/><br/>
+      <a class="text-danger fw-bold fs-6 pb-3 text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria">
         TryHackMe</a>
         `,
-        center: true,
-    level: 5,
+    center: true,
+    level: 4,
     sage: false,
+  },
+  {
+    id: "py",
+    icon: `${di}python-plain`,
+    gradient: g.green,
+    useModal: true,
+    title: "Python",
+    body: `a`,
+    level: 3,
+  },
+  {
+    id: "react",
+    icon: `${di}react-original`,
+    gradient: g.cyan,
+    useModal: null,
+    title: "React",
+    body: `<p>text</p>`,
+    level: 4,
+  },
+  {
+    id: "btc",
+    icon: "fab fa-bitcoin",
+    gradient: g.orange,
+    useModal: null,
+    title: "Bitcoin",
+    body: `asffs`,
+    level: 3,
+  },
+  {
+    id: "eth",
+    icon: "fab fa-ethereum",
+    gradient: g.gray,
+    useModal: null,
+    title: "Ethereum",
+    body: `fff`,
+    level: 3,
+  },
+  {
+    id: "daw",
+    icon: "fas fa-pepper-hot",
+    gradient: g.orange,
+    useModal: null,
+    title: "FL Studio",
+    body: ``,
+    level: 4,
+  },
+  {
+    id: "vg",
+    icon: "fas fa-gamepad",
+    gradient: g.pink,
+    useModal: null,
+    title: "Game Testing/Competition",
+    body: `<p>
+    <Image src="/img/psn-card.png" alt="" />
+    </p>`,
+    level: 5,
+  },
+  {
+    id: "obs",
+    icon: "fab fa-twitch",
+    gradient: g.purple,
+    useModal: null,
+    title: "Livestreaming",
+    body: `<p>
+    I am an experienced streamer of nearly 2 years.<br>
+    I'm well acquainted with handling complex OBS
+    scenes/setups to create aesthetically pleasing yet confluent designs. Livestreaming has
+    offered
+    me a great outlet for improving my ability to perform under pressure whether through solo
+    tasks
+    or multitasking in front of random
+    audiences as well as aiding me in developing stronger social skills through viewer
+    engagement.
+  </p>`,
+    level: 4,
+  },
+  {
+    id: "dav",
+    icon: "fas fa-clapperboard",
+    gradient: g.blue,
+    useModal: null,
+    title: "Video Production",
+    body: ``,
+    level: 3,
+  },
+  {
+    id: "fit",
+    icon: "fas fa-dumbbell",
+    gradient: g.gray,
+    useModal: null,
+    title: "Nutrition/Fitness",
+    body: `                      <p>
+    I have an intermediate foundational understanding of a variety of topics related to strength
+    training<br>
+    e.g., diet structuring, optimizing workout plans, managing supplement cycles
+
+    As well as over 4 years of weekly personal experience training (cut short by a common
+    weightlifting
+    injury, i.e. inguinal hernia)
+  </p>`,
+    level: 4,
+  },
+  {
+    id: "deb",
+    icon: `${di}debian-plain`,
+    gradient: g.red,
+    useModal: null,
+    title: "Linux (Debian)",
+    body: ``,
+    level: 4,
+  },
+  {
+    id: "js",
+    icon: `${di}javascript-plain`,
+    gradient: g.yellow,
+    useModal: null,
+    title: "Javascript",
+    body: ``,
+    level: 0,
+  },
+  {
+    id: "node",
+    icon: `${di}nodejs-plain`,
+    gradient: g.green,
+    useModal: null,
+    title: "NodeJS",
+    body: ``,
+    level: 0,
   },
 ];
 

@@ -1,4 +1,8 @@
-.container .scroll  {
+.container * {
+  box-sizing: border-box;
+}
+
+.scroll  {
   --gap: 0.5rem;
   position: relative;
   display: flex;
@@ -14,11 +18,11 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 75%);
 }
 
-.container .scroll:hover {
+.scroll:hover {
   cursor: pointer;
 }
 
-.container .scroll ul {
+.scroll ul {
   list-style: none;
   flex-shrink: 0;
   display: flex;
@@ -28,7 +32,7 @@
   animation: scroll 80s linear infinite;
 }
 
-.container .scroll ul li {
+.scroll ul li {
   flex: 0 0 auto;
   font-family: inherit;
   background: transparent;
@@ -40,37 +44,33 @@
   vertical-align:middle;
 }
 
-.container .scroll ul li:hover {
+.scroll ul li:hover {
   text-decoration: underline;
 }
 
-/* .container .scroll ul li:before {
+/* .scroll ul li:before {
   content: "# ";
 } */
 
-.container * {
-  box-sizing: border-box;
-}
-
-.container .scroll--reverse .scroll ul {
+.scroll--reverse .scroll ul {
   animation-direction: reverse;
 }
 
-.container .scroll--hover-pause:hover .scroll ul {
+.scroll--hover-pause:hover .scroll ul {
   animation-play-state: paused;
 }
 
-.container .scroll--fit-content {
+.scroll--fit-content {
   max-width: fit-content;
 }
 
-.container .scroll--pos-absolute .scroll ul:last-child {
+.scroll--pos-absolute .scroll ul:last-child {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.container .enable-animation .scroll--pos-absolute .scroll ul:last-child {
+.enable-animation .scroll--pos-absolute .scroll ul:last-child {
   animation-name: scroll-abs;
 }
 
