@@ -8,7 +8,7 @@ function Bubble(skillProps) {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
-  const rank = "★".repeat(skillProps.level);
+  const rank = "★".repeat(skillProps.rank);
 
   return (
     <div className="col-4">
@@ -23,7 +23,7 @@ function Bubble(skillProps) {
           data-bs-target={`#${skillProps.id}Modal`}
         ></i>
       </div>
-      {skillProps.useModal && (
+      {skillProps.body && skillProps.body.length > 0 && (
         <div
           id={`${skillProps.id}Modal`}
           className="modal fade"
@@ -43,28 +43,22 @@ function Bubble(skillProps) {
                   aria-label="Close"
                 ></button>
               </div>
-              {skillProps.body ? (
-                <div
-                  className={`modal-body fw-normal ${
-                    skillProps.center ? "text-center" : "text-start"
-                  }`}
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(skillProps.body),
-                  }}
-                ></div>
-              ) : (
-                skillProps.children
-              )}
+              <div
+                className={`modal-body fw-normal ${
+                  skillProps.center ? "text-center" : "text-start"
+                }`}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(skillProps.body),
+                }}
+              ></div>
               <div className="modal-footer">
                 <span className="rank">{rank}</span>
-                {skillProps.sage ? (
+                {skillProps.sage && (
                   <p
                     dangerouslySetInnerHTML={{
                       __html: `Drafted using <a href="https://poe.com/sage">Sage</a>`,
                     }}
                   ></p>
-                ) : (
-                  false
                 )}
               </div>
             </div>

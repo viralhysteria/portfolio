@@ -79,27 +79,27 @@ const skillProps = [
     id: "html",
     icon: `${di}html5-plain`,
     gradient: g.orange,
-    useModal: false,
+    // useModal: false,
     title: "HTML",
     body: `<p>hello world, placeholder text</p>`,
-    level: 5,
+    rank: 5,
     sage: false,
   },
   {
     id: "css",
     icon: `${di}css3-plain`,
     gradient: g.purple,
-    useModal: false,
+    // useModal: false,
     title: "CSS",
     body: `<p>hello world, placeholder text</p>`,
-    level: 5,
+    rank: 5,
     sage: false,
   },
   {
     id: "design",
     icon: `${di}photoshop-line`,
     gradient: g.blue,
-    useModal: true,
+    // useModal: true,
     title: "Graphic Design",
     body: `<p>
       I'm a graphic designer with a strong background in traditional art. I've always had a passion for creating visually stunning designs that communicate a message effectively. My experience in traditional art has given me a unique perspective and skillset that I apply to my digital design work.
@@ -108,14 +108,14 @@ const skillProps = [
       <br><br>
       I enjoy the challenge of creating designs that not only look great but also have a purpose and meaning behind them. I'm constantly exploring new techniques and software to keep up-to-date with the latest trends and innovations in the industry. Overall, my experience in traditional art and digital design, combined with my extensive Photoshop knowledge, makes me a strong asset to any team seeking a skilled and passionate graphic designer.
     </p>`,
-    level: 3,
+    rank: 3,
     sage: true,
   },
   {
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
     gradient: g.red,
-    useModal: true,
+    // useModal: true,
     title: "Technical Analysis",
     body: `<p>
       As all investors tend to do, I tried to find the closest thing to a holy grail I could when trying to navigate the markets in a way that wouldn't make me lose my head. I can't say what exactly drew me to technical analysis out the gate, but I continue to constantly find new things that keep me engaged.
@@ -130,14 +130,14 @@ const skillProps = [
       <span class="text-primary">Price / Volume / S&R / Moving Averages / Ichimoku<br>
       Bollinger Bands / AVWAP / VPVR / (Stoch+Std) RSI</span>
     </p>`,
-    level: 4,
+    rank: 4,
     sage: true,
   },
   {
     id: "win",
     icon: `${di}windows8-original`,
     gradient: g.yellow,
-    useModal: true,
+    // useModal: true,
     title: "Windows",
     body: `<p>
       I started using Windows-based PCs for the first time on a regular basis sometime around 2003 with XP. I took an early interest into web development with HTML and CSS around the time Myspace was launched and got my early start at the age of 8 or 9 learning how to make (overly complex) profile designs.
@@ -146,14 +146,14 @@ const skillProps = [
       <br><br>
       Whilst my attempts to thwart the virus were ultimately in vain, I continued to have an interest having a deeper understanding of how the operating system functions as a whole. This is what inevitab likely led me down the path I now find myself on.
     </p>`,
-    level: 5,
+    rank: 5,
     sage: false,
   },
   {
     id: "oscp",
     icon: "fas fa-dragon",
     gradient: g.cyan,
-    useModal: true,
+    // useModal: true,
     title: "Pentesting w/Kali Linux",
     body: `
       <span class="fw-bold text-decoration-underline">Frameworks:</span>
@@ -170,70 +170,70 @@ const skillProps = [
         TryHackMe</a>
         `,
     center: true,
-    level: 4,
+    rank: 4,
     sage: false,
   },
   {
     id: "py",
     icon: `${di}python-plain`,
     gradient: g.green,
-    useModal: true,
+    // useModal: true,
     title: "Python",
     body: `a`,
-    level: 3,
+    rank: 3,
   },
   {
     id: "react",
     icon: `${di}react-original`,
     gradient: g.cyan,
-    useModal: null,
+    // useModal: null,
     title: "React",
     body: `<p>text</p>`,
-    level: 4,
+    rank: 4,
   },
   {
     id: "btc",
     icon: "fab fa-bitcoin",
     gradient: g.orange,
-    useModal: null,
+    // useModal: null,
     title: "Bitcoin",
     body: `asffs`,
-    level: 3,
+    rank: 3,
   },
   {
     id: "eth",
     icon: "fab fa-ethereum",
     gradient: g.gray,
-    useModal: null,
+    // useModal: null,
     title: "Ethereum",
     body: `fff`,
-    level: 3,
+    rank: 3,
   },
   {
     id: "daw",
     icon: "fas fa-pepper-hot",
     gradient: g.orange,
-    useModal: null,
+    // useModal: null,
     title: "FL Studio",
     body: ``,
-    level: 4,
+    rank: 4,
   },
   {
     id: "vg",
     icon: "fas fa-gamepad",
     gradient: g.pink,
-    useModal: null,
+    // useModal: null,
     title: "Game Testing/Competition",
     body: `<p>
     <Image src="/img/psn-card.png" alt="" />
     </p>`,
-    level: 5,
+    rank: 5,
   },
   {
     id: "obs",
     icon: "fab fa-twitch",
     gradient: g.purple,
-    useModal: null,
+    // useModal: null,
     title: "Livestreaming",
     body: `<p>
     I am an experienced streamer of nearly 2 years.<br>
@@ -246,22 +246,22 @@ const skillProps = [
     audiences as well as aiding me in developing stronger social skills through viewer
     engagement.
   </p>`,
-    level: 4,
+    rank: 4,
   },
   {
     id: "dav",
     icon: "fas fa-clapperboard",
     gradient: g.blue,
-    useModal: null,
+    // useModal: null,
     title: "Video Production",
     body: ``,
-    level: 3,
+    rank: 3,
   },
   {
     id: "fit",
     icon: "fas fa-dumbbell",
     gradient: g.gray,
-    useModal: null,
+    // useModal: null,
     title: "Nutrition/Fitness",
     body: `                      <p>
     I have an intermediate foundational understanding of a variety of topics related to strength
@@ -272,34 +272,34 @@ const skillProps = [
     weightlifting
     injury, i.e. inguinal hernia)
   </p>`,
-    level: 4,
+    rank: 4,
   },
   {
     id: "deb",
     icon: `${di}debian-plain`,
     gradient: g.red,
-    useModal: null,
+    // useModal: null,
     title: "Linux (Debian)",
     body: ``,
-    level: 4,
+    rank: 4,
   },
   {
     id: "js",
     icon: `${di}javascript-plain`,
     gradient: g.yellow,
-    useModal: null,
+    // useModal: null,
     title: "Javascript",
     body: ``,
-    level: 0,
+    rank: 3,
   },
   {
     id: "node",
     icon: `${di}nodejs-plain`,
     gradient: g.green,
-    useModal: null,
+    // useModal: null,
     title: "NodeJS",
     body: ``,
-    level: 0,
+    rank: 2,
   },
 ];
 
