@@ -79,7 +79,6 @@ const skillProps = [
     id: "html",
     icon: `${di}html5-plain`,
     gradient: g.orange,
-    // useModal: false,
     title: "HTML",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
@@ -89,7 +88,6 @@ const skillProps = [
     id: "css",
     icon: `${di}css3-plain`,
     gradient: g.purple,
-    // useModal: false,
     title: "CSS",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
@@ -99,7 +97,6 @@ const skillProps = [
     id: "design",
     icon: `${di}photoshop-line`,
     gradient: g.blue,
-    // useModal: true,
     title: "Graphic Design",
     body: `<p>
       I'm a graphic designer with a strong background in traditional art. I've always had a passion for creating visually stunning designs that communicate a message effectively. My experience in traditional art has given me a unique perspective and skillset that I apply to my digital design work.
@@ -115,7 +112,6 @@ const skillProps = [
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
     gradient: g.red,
-    // useModal: true,
     title: "Technical Analysis",
     body: `<p>
       As all investors tend to do, I tried to find the closest thing to a holy grail I could when trying to navigate the markets in a way that wouldn't make me lose my head. I can't say what exactly drew me to technical analysis out the gate, but I continue to constantly find new things that keep me engaged.
@@ -137,7 +133,6 @@ const skillProps = [
     id: "win",
     icon: `${di}windows8-original`,
     gradient: g.yellow,
-    // useModal: true,
     title: "Windows",
     body: `<p>
       I started using Windows-based PCs for the first time on a regular basis sometime around 2003 with XP. I took an early interest into web development with HTML and CSS around the time Myspace was launched and got my early start at the age of 8 or 9 learning how to make (overly complex) profile designs.
@@ -153,7 +148,6 @@ const skillProps = [
     id: "oscp",
     icon: "fas fa-dragon",
     gradient: g.cyan,
-    // useModal: true,
     title: "Pentesting w/Kali Linux",
     body: `
       <span class="fw-bold text-decoration-underline">Frameworks:</span>
@@ -177,7 +171,6 @@ const skillProps = [
     id: "py",
     icon: `${di}python-plain`,
     gradient: g.green,
-    // useModal: true,
     title: "Python",
     body: `a`,
     rank: 3,
@@ -186,7 +179,6 @@ const skillProps = [
     id: "react",
     icon: `${di}react-original`,
     gradient: g.cyan,
-    // useModal: null,
     title: "React",
     body: `<p>text</p>`,
     rank: 4,
@@ -195,7 +187,6 @@ const skillProps = [
     id: "btc",
     icon: "fab fa-bitcoin",
     gradient: g.orange,
-    // useModal: null,
     title: "Bitcoin",
     body: `asffs`,
     rank: 3,
@@ -204,7 +195,6 @@ const skillProps = [
     id: "eth",
     icon: "fab fa-ethereum",
     gradient: g.gray,
-    // useModal: null,
     title: "Ethereum",
     body: `fff`,
     rank: 3,
@@ -213,7 +203,6 @@ const skillProps = [
     id: "daw",
     icon: "fas fa-pepper-hot",
     gradient: g.orange,
-    // useModal: null,
     title: "FL Studio",
     body: ``,
     rank: 4,
@@ -222,7 +211,6 @@ const skillProps = [
     id: "vg",
     icon: "fas fa-gamepad",
     gradient: g.pink,
-    // useModal: null,
     title: "Game Testing/Competition",
     body: `<p>
     <Image src="/img/psn-card.png" alt="" />
@@ -233,7 +221,6 @@ const skillProps = [
     id: "obs",
     icon: "fab fa-twitch",
     gradient: g.purple,
-    // useModal: null,
     title: "Livestreaming",
     body: `<p>
     I am an experienced streamer of nearly 2 years.<br>
@@ -252,7 +239,6 @@ const skillProps = [
     id: "dav",
     icon: "fas fa-clapperboard",
     gradient: g.blue,
-    // useModal: null,
     title: "Video Production",
     body: ``,
     rank: 3,
@@ -261,7 +247,6 @@ const skillProps = [
     id: "fit",
     icon: "fas fa-dumbbell",
     gradient: g.gray,
-    // useModal: null,
     title: "Nutrition/Fitness",
     body: `                      <p>
     I have an intermediate foundational understanding of a variety of topics related to strength
@@ -278,7 +263,6 @@ const skillProps = [
     id: "deb",
     icon: `${di}debian-plain`,
     gradient: g.red,
-    // useModal: null,
     title: "Linux (Debian)",
     body: ``,
     rank: 4,
@@ -287,7 +271,6 @@ const skillProps = [
     id: "js",
     icon: `${di}javascript-plain`,
     gradient: g.yellow,
-    // useModal: null,
     title: "Javascript",
     body: ``,
     rank: 3,
@@ -296,7 +279,6 @@ const skillProps = [
     id: "node",
     icon: `${di}nodejs-plain`,
     gradient: g.green,
-    // useModal: null,
     title: "NodeJS",
     body: ``,
     rank: 2,
