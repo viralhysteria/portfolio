@@ -13,8 +13,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const dataBsTheme = process.browser ? "auto" : "dark";
+
   return (
-    <html lang="en" data-bs-theme="auto">
+    <html lang="en" data-bs-theme={dataBsTheme}>
       <body className={inter.className}>{children}</body>
     </html>
   );
