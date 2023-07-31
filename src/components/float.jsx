@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-// import nametag from "../img/nametag.png";
 
 export default function Nav() {
   return (
@@ -32,12 +31,6 @@ export default function Nav() {
                   <h1 className="modal-title" id="bioModalLabel">
                     Who Am I?
                   </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
                 </div>
                 <div className="modal-body fw-normal">
                   <p className="about-text fw-normal animate__animated animate__fadeIn">
@@ -64,8 +57,8 @@ export default function Nav() {
                     className="img-fluid w-25 nametag animate__animated animate__fadeIn animate__delay-1s"
                     src="/img/nametag.png"
                     alt=""
-                    width="0"
-                    height="0"
+                    width="100"
+                    height="20"
                   />
                   <ul className="nav breadcrumb animate__animated animate__fadeIn animate__delay-1s">
                     <a

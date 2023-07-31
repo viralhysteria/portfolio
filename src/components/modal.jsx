@@ -290,7 +290,7 @@ const Properties = [
     title: "NodeJS",
     body: ``,
     rank: 2,
-  },
+  }
 ];
 
 export default Properties;
