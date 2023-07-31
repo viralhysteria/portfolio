@@ -1,20 +1,26 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { renderToString } from "react-dom/server";
 
-const di = "devicon-";
-const lg = "linear-gradient(180deg,";
+const gradientBase = [
+  { name: "red", colors: ["#e35d6a", "#842029"] },
+  { name: "blue", colors: ["#3d8bfd", "#084298"] },
+  { name: "cyan", colors: ["#3dd5f3", "#087990"] },
+  { name: "gray", colors: ["#ced4da", "#495057"] },
+  { name: "pink", colors: ["#de5c9d", "#801f4f"] },
+  { name: "green", colors: ["#479f76", "#0f5132"] },
+  { name: "yellow", colors: ["#ffcd39", "#997404"] },
+  { name: "orange", colors: ["#fd9843", "#984c0c"] },
+  { name: "purple", colors: ["#8c68cd", "#432874"] },
+];
 
-const g = {
-  red: `${lg} #e35d6a 0%, #842029 100%)`,
-  blue: `${lg} #3d8bfd 0%, #084298 100%)`,
-  cyan: `${lg} #3dd5f3 0%, #087990 100%)`,
-  gray: `${lg} #ced4da 0%, #495057 100%)`,
-  pink: `${lg} #de5c9d 0%, #801f4f 100%)`,
-  green: `${lg} #479f76 0%, #0f5132 100%)`,
-  yellow: `${lg} #ffcd39 0%, #997404 100%)`,
-  orange: `${lg} #fd9843 0%, #984c0c 100%)`,
-  purple: `${lg} #8c68cd 0%, #432874 100%)`,
-};
+const g = gradientBase.reduce((acc, { name, colors }) => {
+  acc[name] = generateGradient(...colors);
+  return acc;
+}, {});
+
+function generateGradient(color1, color2) {
+  return `linear-gradient(180deg, ${color1} 0%, ${color2} 100%)`;
+}
 
 const kaliStack = {
   framework: [
@@ -58,7 +64,7 @@ const kaliStack = {
   ],
 };
 
-function kaliBody () {
+function kaliBody() {
   const frameworks = kaliStack.framework;
   const commandline = kaliStack.commandline;
 
@@ -76,9 +82,17 @@ function kaliBody () {
           <li key={i}>{c}</li>
         ))}
       </ul>
+      <a
+        class="text-danger fw-bold fs-6 pb-3 text-decoration-none"
+        href="https://tryhackme.com/p/viralhysteria"
+      >
+        TryHackMe
+      </a>
     </>
   );
-};
+}
+
+const di = "devicon-";
 
 const Properties = [
   {
@@ -156,10 +170,6 @@ const Properties = [
     gradient: g.cyan,
     title: "Pentesting w/Kali Linux",
     body: `${renderToString(kaliBody())}
-      <Image src="/img/thm-preview.jpg" alt="" width="50%"/><br/>
-      <a class="text-danger fw-bold fs-6 pb-3 text-decoration-none"
-        href="https://tryhackme.com/p/viralhysteria">
-        TryHackMe</a>
         `,
     center: true,
     rank: 4,
