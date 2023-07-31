@@ -1,6 +1,5 @@
-import { renderToString } from "react-dom/server";
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { renderToString } from "react-dom/server";
 
 const di = "devicon-";
 const lg = "linear-gradient(180deg,";
@@ -17,64 +16,71 @@ const g = {
   purple: `${lg} #8c68cd 0%, #432874 100%)`,
 };
 
-const kFeEl = [
-  "armitage",
-  "autopsy",
-  "brim",
-  "burpsuite",
-  "chisel",
-  "covenant",
-  "eztools",
-  "gophish",
-  "impacket",
-  "kape",
-  "kibana",
-  "metasploit",
-  "osquery",
-  "procdot",
-  "redline",
-  "remnux",
-  "responder",
-  "sherlock",
-  "sysinternals",
-  "volatility",
-  "velociraptor",
-  "zeek",
-  "zap",
-];
+const kaliStack = {
+  framework: [
+    "armitage",
+    "autopsy",
+    "brim",
+    "burpsuite",
+    "chisel",
+    "covenant",
+    "eztools",
+    "gophish",
+    "impacket",
+    "kape",
+    "kibana",
+    "metasploit",
+    "osquery",
+    "procdot",
+    "redline",
+    "remnux",
+    "responder",
+    "sherlock",
+    "sysinternals",
+    "volatility",
+    "velociraptor",
+    "zeek",
+    "zap",
+  ],
+  commandline: [
+    "capa",
+    "ffuf",
+    "gobuster",
+    "hashid",
+    "hydra",
+    "john",
+    "linpeas",
+    "mimikatz",
+    "nmap",
+    "sherlock",
+    "sublist3r",
+    "sqlmap",
+  ],
+};
 
-const kCuEl = [
-  "capa",
-  "ffuf",
-  "gobuster",
-  "hashid",
-  "hydra",
-  "john",
-  "linpeas",
-  "mimikatz",
-  "nmap",
-  "sherlock",
-  "sublist3r",
-  "sqlmap",
-];
+function kaliBody () {
+  const frameworks = kaliStack.framework;
+  const commandline = kaliStack.commandline;
 
-function kFrontend() {
-  return kFeEl.map((e, i) => (
-    <li key={i} className="list-inline-item">
-      {e.toString()}
-    </li>
-  ));
-}
+  return (
+    <>
+      <span className="fw-bold text-decoration-underline">Frameworks:</span>
+      <ul className="list-inline">
+        {frameworks.map((f, i) => (
+          <li key={i}>{f}</li>
+        ))}
+      </ul>
+      <span className="fw-bold text-decoration-underline">Commandline:</span>
+      <ul className="list-inline">
+        {commandline.map((c, i) => (
+          <li key={i}>{c}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
 
-function kCLIUtil() {
-  return kCuEl.map((e, i) => (
-    <li key={i} className="list-inline-item">
-      {e}
-    </li>
-  ));
-}
-
-const skillProps = [
+const Properties = [
   {
     id: "html",
     icon: `${di}html5-plain`,
@@ -149,15 +155,7 @@ const skillProps = [
     icon: "fas fa-dragon",
     gradient: g.cyan,
     title: "Pentesting w/Kali Linux",
-    body: `
-      <span class="fw-bold text-decoration-underline">Frameworks:</span>
-      <ul class="list-inline">
-        ${renderToString(kFrontend())}
-      </ul>
-      <span class="fw-bold text-decoration-underline">Commandline:</span>
-      <ul class="list-inline">
-        ${renderToString(kCLIUtil())}
-      </ul>
+    body: `${renderToString(kaliBody())}
       <Image src="/img/thm-preview.jpg" alt="" width="50%"/><br/>
       <a class="text-danger fw-bold fs-6 pb-3 text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria">
@@ -248,7 +246,7 @@ const skillProps = [
     icon: "fas fa-dumbbell",
     gradient: g.gray,
     title: "Nutrition/Fitness",
-    body: `                      <p>
+    body: `<p>
     I have an intermediate foundational understanding of a variety of topics related to strength
     training<br>
     e.g., diet structuring, optimizing workout plans, managing supplement cycles
@@ -256,7 +254,7 @@ const skillProps = [
     As well as over 4 years of weekly personal experience training (cut short by a common
     weightlifting
     injury, i.e. inguinal hernia)
-  </p>`,
+    </p>`,
     rank: 4,
   },
   {
@@ -285,4 +283,4 @@ const skillProps = [
   },
 ];
 
-export default skillProps;
+export default Properties;
