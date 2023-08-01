@@ -1,7 +1,7 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { renderToString } from "react-dom/server";
+import { renderToPipeableStream } from "react-dom/server";
 
-const gradientBase = [
+const gradients = [
   { name: "red", colors: ["#e35d6a", "#842029"] },
   { name: "blue", colors: ["#3d8bfd", "#084298"] },
   { name: "cyan", colors: ["#3dd5f3", "#087990"] },
@@ -13,12 +13,12 @@ const gradientBase = [
   { name: "purple", colors: ["#8c68cd", "#432874"] },
 ];
 
-const g = gradientBase.reduce((acc, { name, colors }) => {
-  acc[name] = generateGradient(...colors);
+const g = gradients.reduce((acc, { name, colors }) => {
+  acc[name] = genGradient(...colors);
   return acc;
 }, {});
 
-function generateGradient(color1, color2) {
+function genGradient(color1, color2) {
   return `linear-gradient(180deg, ${color1} 0%, ${color2} 100%)`;
 }
 
@@ -98,7 +98,7 @@ const Properties = [
   {
     id: "html",
     icon: `${di}html5-plain`,
-    gradient: g.orange,
+    color: g.orange,
     title: "HTML",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
@@ -107,7 +107,7 @@ const Properties = [
   {
     id: "css",
     icon: `${di}css3-plain`,
-    gradient: g.purple,
+    color: g.purple,
     title: "CSS",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
@@ -116,7 +116,7 @@ const Properties = [
   {
     id: "design",
     icon: `${di}photoshop-line`,
-    gradient: g.blue,
+    color: g.blue,
     title: "Graphic Design",
     body: `<p>
       I'm a graphic designer with a strong background in traditional art. I've always had a passion for creating visually stunning designs that communicate a message effectively. My experience in traditional art has given me a unique perspective and skillset that I apply to my digital design work.
@@ -131,7 +131,7 @@ const Properties = [
   {
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
-    gradient: g.red,
+    color: g.red,
     title: "Technical Analysis",
     body: `<p>
       As all investors tend to do, I tried to find the closest thing to a holy grail I could when trying to navigate the markets in a way that wouldn't make me lose my head. I can't say what exactly drew me to technical analysis out the gate, but I continue to constantly find new things that keep me engaged.
@@ -152,7 +152,7 @@ const Properties = [
   {
     id: "win",
     icon: `${di}windows8-original`,
-    gradient: g.yellow,
+    color: g.yellow,
     title: "Windows",
     body: `<p>
       I started using Windows-based PCs for the first time on a regular basis sometime around 2003 with XP. I took an early interest into web development with HTML and CSS around the time Myspace was launched and got my early start at the age of 8 or 9 learning how to make (overly complex) profile designs.
@@ -167,10 +167,9 @@ const Properties = [
   {
     id: "oscp",
     icon: "fas fa-dragon",
-    gradient: g.cyan,
+    color: g.cyan,
     title: "Pentesting w/Kali Linux",
-    body: `${renderToString(kaliBody())}
-        `,
+    body: `${renderToPipeableStream(kaliBody())}`,
     center: true,
     rank: 4,
     sage: false,
@@ -178,7 +177,7 @@ const Properties = [
   {
     id: "py",
     icon: `${di}python-plain`,
-    gradient: g.green,
+    color: g.green,
     title: "Python",
     body: `a`,
     rank: 3,
@@ -186,7 +185,7 @@ const Properties = [
   {
     id: "react",
     icon: `${di}react-original`,
-    gradient: g.cyan,
+    color: g.cyan,
     title: "React",
     body: `<p>text</p>`,
     rank: 4,
@@ -194,7 +193,7 @@ const Properties = [
   {
     id: "btc",
     icon: "fab fa-bitcoin",
-    gradient: g.orange,
+    color: g.orange,
     title: "Bitcoin",
     body: `asffs`,
     rank: 3,
@@ -202,7 +201,7 @@ const Properties = [
   {
     id: "eth",
     icon: "fab fa-ethereum",
-    gradient: g.gray,
+    color: g.gray,
     title: "Ethereum",
     body: `fff`,
     rank: 3,
@@ -210,7 +209,7 @@ const Properties = [
   {
     id: "daw",
     icon: "fas fa-pepper-hot",
-    gradient: g.orange,
+    color: g.orange,
     title: "FL Studio",
     body: ``,
     rank: 4,
@@ -218,7 +217,7 @@ const Properties = [
   {
     id: "vg",
     icon: "fas fa-gamepad",
-    gradient: g.pink,
+    color: g.pink,
     title: "Game Testing/Competition",
     body: `<p>
     <Image src="/img/psn-card.png" alt="" />
@@ -228,7 +227,7 @@ const Properties = [
   {
     id: "obs",
     icon: "fab fa-twitch",
-    gradient: g.purple,
+    color: g.purple,
     title: "Livestreaming",
     body: `<p>
     I am an experienced streamer of nearly 2 years.<br>
@@ -246,7 +245,7 @@ const Properties = [
   {
     id: "dav",
     icon: "fas fa-clapperboard",
-    gradient: g.blue,
+    color: g.blue,
     title: "Video Production",
     body: ``,
     rank: 3,
@@ -254,7 +253,7 @@ const Properties = [
   {
     id: "fit",
     icon: "fas fa-dumbbell",
-    gradient: g.gray,
+    color: g.gray,
     title: "Nutrition/Fitness",
     body: `<p>
     I have an intermediate foundational understanding of a variety of topics related to strength
@@ -270,7 +269,7 @@ const Properties = [
   {
     id: "deb",
     icon: `${di}debian-plain`,
-    gradient: g.red,
+    color: g.red,
     title: "Linux (Debian)",
     body: ``,
     rank: 4,
@@ -278,7 +277,7 @@ const Properties = [
   {
     id: "js",
     icon: `${di}javascript-plain`,
-    gradient: g.yellow,
+    color: g.yellow,
     title: "Javascript",
     body: ``,
     rank: 3,
@@ -286,7 +285,7 @@ const Properties = [
   {
     id: "node",
     icon: `${di}nodejs-plain`,
-    gradient: g.green,
+    color: g.green,
     title: "NodeJS",
     body: ``,
     rank: 2,
