@@ -15,7 +15,7 @@ function Bubble(Properties) {
       <div
         className={`${styles.circle} hvr-pulse select`}
         data-bs-html="true"
-        style={{ background: `${Properties.gradient}` }}
+        style={{ background: `${Properties.color}` }}
       >
         <i
           className={`${Properties.icon}`}

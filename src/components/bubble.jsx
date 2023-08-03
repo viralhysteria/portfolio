@@ -1,5 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { renderToPipeableStream } from "react-dom/server";
+import { renderToString } from "react-dom/server";
 
 const gradients = [
   { name: "red", colors: ["#e35d6a", "#842029"] },
@@ -64,7 +64,7 @@ const kaliStack = {
   ],
 };
 
-function kaliBody() {
+export function kaliBody() {
   const frameworks = kaliStack.framework;
   const commandline = kaliStack.commandline;
 
@@ -169,7 +169,7 @@ const Properties = [
     icon: "fas fa-dragon",
     color: g.cyan,
     title: "Pentesting w/Kali Linux",
-    body: `${renderToPipeableStream(kaliBody())}`,
+    body: `${renderToString(kaliBody())}`,
     center: true,
     rank: 4,
     sage: false,
