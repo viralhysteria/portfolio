@@ -65,23 +65,23 @@ const kaliStack = {
 };
 
 export function kaliBody() {
-  const frameworks = kaliStack.framework;
-  const commandline = kaliStack.commandline;
+  const KSMap = ({ items }) => (
+    <ul className="list-inline d-flex flex-wrap">
+      {items.map((item, i) => (
+        <li key={i} className="d-inline">
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <>
       <span className="fw-bold text-decoration-underline">Frameworks:</span>
-      <ul className="list-inline">
-        {frameworks.map((f, i) => (
-          <li key={i}>{f}</li>
-        ))}
-      </ul>
+      <KSMap items={kaliStack.framework} />
+
       <span className="fw-bold text-decoration-underline">Commandline:</span>
-      <ul className="list-inline">
-        {commandline.map((c, i) => (
-          <li key={i}>{c}</li>
-        ))}
-      </ul>
+      <KSMap items={kaliStack.commandline} />
       <a
         className="text-danger fw-bold fs-6 pb-3 text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
@@ -102,7 +102,6 @@ const Properties = [
     title: "HTML",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
-    sage: false,
   },
   {
     id: "css",
@@ -111,7 +110,6 @@ const Properties = [
     title: "CSS",
     body: `<p>hello world, placeholder text</p>`,
     rank: 5,
-    sage: false,
   },
   {
     id: "design",
@@ -162,7 +160,6 @@ const Properties = [
       Whilst my attempts to thwart the virus were ultimately in vain, I continued to have an interest having a deeper understanding of how the operating system functions as a whole. This is what inevitab likely led me down the path I now find myself on.
     </p>`,
     rank: 5,
-    sage: false,
   },
   {
     id: "oscp",
@@ -172,7 +169,6 @@ const Properties = [
     body: `${renderToString(kaliBody())}`,
     center: true,
     rank: 4,
-    sage: false,
   },
   {
     id: "py",
@@ -211,7 +207,7 @@ const Properties = [
     icon: "fas fa-pepper-hot",
     color: g.orange,
     title: "FL Studio",
-    body: ``,
+    body: ` `,
     rank: 4,
   },
   {
@@ -230,7 +226,6 @@ const Properties = [
     color: g.purple,
     title: "Livestreaming",
     body: `<p>
-    I am an experienced streamer of nearly 2 years.<br>
     I'm well acquainted with handling complex OBS
     scenes/setups to create aesthetically pleasing yet confluent designs. Livestreaming has
     offered
@@ -247,7 +242,7 @@ const Properties = [
     icon: "fas fa-clapperboard",
     color: g.blue,
     title: "Video Production",
-    body: ``,
+    body: ` `,
     rank: 3,
   },
   {
@@ -271,7 +266,7 @@ const Properties = [
     icon: `${di}debian-plain`,
     color: g.red,
     title: "Linux (Debian)",
-    body: ``,
+    body: ` `,
     rank: 4,
   },
   {
@@ -279,7 +274,7 @@ const Properties = [
     icon: `${di}javascript-plain`,
     color: g.yellow,
     title: "Javascript",
-    body: ``,
+    body: ` `,
     rank: 3,
   },
   {
@@ -287,9 +282,9 @@ const Properties = [
     icon: `${di}nodejs-plain`,
     color: g.green,
     title: "NodeJS",
-    body: ``,
+    body: ` `,
     rank: 2,
-  }
+  },
 ];
 
 export default Properties;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Properties from "./Bubble";
 import styles from "../styles/skills.module.css";
@@ -74,18 +74,14 @@ export default function Grid() {
 
   for (let i = 0; i < Properties.length; i += 3) {
     const row = (
-        <div className="row justify-content-around" key={i}>
-          {Properties.slice(i, i + 3).map((skill) => (
-            <Bubble key={skill.id} {...skill} />
-          ))}
-        </div>
+      <div className="row justify-content-around" key={i}>
+        {Properties.slice(i, i + 3).map((skill) => (
+          <Bubble key={skill.id} {...skill} />
+        ))}
+      </div>
     );
     rows.push(row);
   }
 
-  return (
-    <div className="icons">
-      {rows}
-    </div>
-  )
+  return <div className="icons">{rows}</div>;
 }

@@ -4,7 +4,6 @@
 
 .scroll  {
   --gap: 0.5rem;
-  position: relative;
   display: flex;
   color: var(--bs-body-color);
   background: var(--bs-body-bg);
@@ -14,7 +13,7 @@
   user-select: none;
   gap: var(--gap);
   width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 75%);
 }
 
@@ -47,10 +46,6 @@
 .scroll ul li:hover {
   text-decoration: underline;
 }
-
-/* .scroll ul li:before {
-  content: "# ";
-} */
 
 .scroll--reverse .scroll ul {
   animation-direction: reverse;

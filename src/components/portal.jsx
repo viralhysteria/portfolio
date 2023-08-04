@@ -7,8 +7,6 @@ import Nav from "./Float";
 import Grid from "./Skills";
 import Preview from "./Discord";
 
-import "../script";
-
 export default function Portal() {
   return (
     <>
@@ -32,7 +30,7 @@ export default function Portal() {
           <Nav />
         </div>
         <div className="d-flex justify-content-center">
-          <main style={{ paddingTop: "10vh" }}>
+          <main style={{ paddingTop: "10vw" }}>
             <div className="skills overflow-hidden animate__animated animate__fadeInUpBig animate__slow">
               <Grid />
             </div>

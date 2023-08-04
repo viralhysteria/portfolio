@@ -1,7 +1,3 @@
-#oscpModal img {
-    filter: invert(100%) grayscale(100%);
-}
-
 .incomplete {
     filter: brightness(50%);
 }
@@ -31,11 +27,6 @@
     justify-content: center;
     height: 100%;
 }
-
-/* i[class^="devicon-debian-plain"]::before,
-i[class^="devicon-python-plain"]::before {
-    font-size: 2em !important;
-} */
 
 @media (min-height: 1850px) and (min-width: 1250px) {
     .icons {

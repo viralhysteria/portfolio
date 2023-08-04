@@ -37,12 +37,16 @@ const channels = [
 ];
 
 export default function Preview() {
+  function inviteTrigger() {
+    window.location.href = "https://discord.gg/invite/xxxxx";
+  }
+
   function chList() {
     return channels.map((ch, i) => <li key={i}>{ch}</li>);
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} fixed-bottom`} onClick={inviteTrigger}>
       <div className={styles.scroll}>
         <ul>{chList()}</ul>
         <ul aria-hidden="true" className={styles.scrollLoop}>
