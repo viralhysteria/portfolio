@@ -3,9 +3,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import Nav from "./float";
-import Grid from "./skills";
-import Preview from "./discord";
+import Nav from "./Float";
+import Grid from "./Skills";
+import Preview from "./Discord";
 
 import "../script";
 

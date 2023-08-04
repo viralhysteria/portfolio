@@ -83,7 +83,7 @@ export function kaliBody() {
         ))}
       </ul>
       <a
-        class="text-danger fw-bold fs-6 pb-3 text-decoration-none"
+        className="text-danger fw-bold fs-6 pb-3 text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
       >
         TryHackMe

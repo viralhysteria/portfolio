@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DOMPurify from "isomorphic-dompurify";
-import Properties from "./bubble";
+import Properties from "./Bubble";
 import styles from "../styles/skills.module.css";
 
 function Bubble(Properties) {

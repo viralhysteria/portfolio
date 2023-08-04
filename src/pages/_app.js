@@ -1,8 +1,7 @@
-// import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss"
-
-import "../theme";
-import "../styles/global.css"
+import React from 'react';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+      <Component {...pageProps} />
+  );
 }
