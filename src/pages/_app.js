@@ -1,8 +1,0 @@
-import React from 'react';
-import "../script";
-
-export default function App({ Component, pageProps }) {
-  return (
-      <Component {...pageProps} />
-  );
-}

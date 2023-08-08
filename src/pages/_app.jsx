@@ -1,12 +1,11 @@
-import React from "react";
 import Head from "next/head";
-
+import "../script";
 import "../styles/global.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "animate.css";
+import "devicon/devicon.min.css";
 
-import Portal from "../components/portal";
-
-export default function Index() {
+export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -15,7 +14,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico?v=2" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <Portal />
+      <Component {...pageProps} />
     </>
   );
 }

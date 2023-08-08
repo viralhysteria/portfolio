@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Properties from "./Bubble";
 import styles from "../styles/skills.module.css";
 
 function Bubble(Properties) {
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+    import("bootstrap/js/src/modal");
   }, []);
 
   const rank = "★".repeat(Properties.rank);
@@ -69,7 +69,7 @@ function Bubble(Properties) {
   );
 }
 
-export default function Grid() {
+export default function SkillsGrid() {
   const rows = [];
 
   for (let i = 0; i < Properties.length; i += 3) {
