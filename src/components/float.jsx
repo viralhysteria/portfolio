@@ -1,4 +1,11 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDiscord,
+  faTwitch,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Nav() {
   return (
@@ -59,30 +66,30 @@ export default function Nav() {
                     width="100"
                     height="20"
                   />
-                  <ul className="nav breadcrumb animate__animated animate__fadeIn animate__delay-1s">
+                  <ul className="nav animate__animated animate__fadeIn animate__delay-1s">
                     <a
-                      className="nav-link breadcrumb-item"
+                      className="nav-link"
                       href="https://discordapp.com/users/653346377010642944"
                     >
-                      Discord
+                      <FontAwesomeIcon icon={faDiscord} />
                     </a>
                     <a
-                      className="nav-link breadcrumb-item"
+                      className="nav-link"
                       href="https://twitter.com/viralhysteria"
                     >
-                      Twitter
+                      <FontAwesomeIcon icon={faTwitter} />
                     </a>
                     <a
-                      className="nav-link breadcrumb-item"
+                      className="nav-link"
                       href="https://github.com/viralhysteria"
                     >
-                      Github
+                      <FontAwesomeIcon icon={faGithub} />
                     </a>
                     <a
-                      className="nav-link breadcrumb-item"
+                      className="nav-link"
                       href="https://twitch.tv/viralhysteria/about"
                     >
-                      Twitch
+                      <FontAwesomeIcon icon={faTwitch} />
                     </a>
                   </ul>
                 </div>
