@@ -100,7 +100,6 @@ const Details = [
     icon: `${di}html5-plain`,
     color: g.orange,
     title: "HTML",
-    body: `<p>hello world, placeholder text</p>`,
     rank: 5,
   },
   {
@@ -108,7 +107,6 @@ const Details = [
     icon: `${di}css3-plain`,
     color: g.purple,
     title: "CSS",
-    body: `<p>hello world, placeholder text</p>`,
     rank: 5,
   },
   {
@@ -175,7 +173,6 @@ const Details = [
     icon: `${di}python-plain`,
     color: g.green,
     title: "Python",
-    body: `a`,
     rank: 3,
   },
   {
@@ -183,7 +180,6 @@ const Details = [
     icon: `${di}react-original`,
     color: g.cyan,
     title: "React",
-    body: `<p>text</p>`,
     rank: 4,
   },
   {
@@ -191,7 +187,6 @@ const Details = [
     icon: "fab fa-bitcoin",
     color: g.orange,
     title: "Bitcoin",
-    body: `asffs`,
     rank: 3,
   },
   {
@@ -199,7 +194,6 @@ const Details = [
     icon: "fab fa-ethereum",
     color: g.gray,
     title: "Ethereum",
-    body: `fff`,
     rank: 3,
   },
   {
