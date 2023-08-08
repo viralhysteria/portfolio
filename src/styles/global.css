@@ -76,10 +76,6 @@ footer ul {
 
 /* ===================== */
 
-#bioModal a:hover {
-    color: var(--bs-purple) !important;
-}
-
 .pattern {
     position: fixed;
     width: 100vw;
@@ -205,6 +201,11 @@ header i::before,
     justify-content: space-between !important;
 }
 
+.modal-footer a {
+    color: var(--bs-body-color)!important;
+    text-decoration: none;
+}
+
 .modal-footer>*:nth-child(-n+2) {
     position: relative;
     top: 5px;
@@ -219,9 +220,8 @@ header i::before,
     font-size: 1em !important;
 }
 
-.modal-footer a {
-    color: rgb(93, 80, 211) !important;
-    text-decoration: none;
+#bioModal a:hover {
+    color: rgb(93, 80, 211)!important;
 }
 
 /* ===================== */
