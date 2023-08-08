@@ -69,7 +69,7 @@ function Bubble(Details) {
             </div>
           </div>
         </div>
-      ) : null }
+      ) : null}
     </div>
   );
 }
@@ -79,7 +79,7 @@ export default function SkillsGrid() {
 
   for (let i = 0; i < Details.length; i += 3) {
     const row = (
-      <div className="row justify-content-around" key={i}>
+      <div className="row justify-content-center" key={i}>
         {Details.slice(i, i + 3).map((skill) => (
           <Bubble key={skill.id} {...skill} />
         ))}
@@ -88,5 +88,11 @@ export default function SkillsGrid() {
     rows.push(row);
   }
 
-  return <div className="icons">{rows}</div>;
+  return (
+    <main className="container">
+      <div className="skills overflow-hidden animate__animated animate__fadeInUpBig animate__slow">
+        <div className="icons">{rows}</div>
+      </div>
+    </main>
+  );
 }

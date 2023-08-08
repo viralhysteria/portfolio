@@ -7,17 +7,16 @@ export default function Portal() {
     <>
       <div className="pattern"></div>
       <div>
-        <div>
+        <div className="position-absolute pt-4 ps-4" id="Header">
           <Nav />
         </div>
-        <div className="d-flex justify-content-center">
-          <main>
-            <div className="skills overflow-hidden animate__animated animate__fadeInUpBig animate__slow">
-              <SkillsGrid />
-            </div>
-          </main>
+        <div
+          className="vh-100 d-flex justify-content-center align-items-center"
+          id="Content"
+        >
+          <SkillsGrid />
+          <Preview />
         </div>
-        <Preview />
       </div>
     </>
   );
