@@ -1,6 +1,11 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiscord, faTwitch, faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDiscord,
+  faTwitch,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Nav() {
   return (
