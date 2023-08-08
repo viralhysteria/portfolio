@@ -1,10 +1,6 @@
-@import url("https://raw.githubusercontent.com/IanLunn/Hover/master/css/hover-min.css");
-
-/* ===================== */
 :root {
     --fs-7: 0.75rem;
     --fs-8: 0.5rem;
-
     .animate__animated.animate__fadeInUpBig,
     .animate__aniamted.animate__fadeInDownBig {
         --animate-duration: 1.2s;
@@ -59,6 +55,22 @@
 }
 
 /* ===================== */
+
+[class*="icons"] i::before {
+    color: var(--bs-body-bg);
+}
+
+header i::before,
+[class*="theme-label"] i::before,
+[class*="icons"] i::before {
+    font-size: 2em;
+    transition: color 1s ease;
+}
+
+header i::before,
+[class*="theme-label"] i::before {
+    color: invert(var(--bs-body-bg));
+}
 
 header li span {
     font-size: 1.5em;
@@ -119,23 +131,6 @@ footer ul {
     padding-right: 0.4rem !important;
 }
 
-[class*="icons"] i::before {
-    color: var(--bs-body-bg);
-}
-
-header i::before,
-[class*="theme-label"] i::before,
-[class*="icons"] i::before {
-    font-size: 2em;
-    transition: color 1s ease;
-}
-
-header i::before,
-[class*="theme-label"] i::before {
-    color: invert(var(--bs-body-bg));
-}
-
-
 .row>div {
     text-align: center;
     padding: 1em;
@@ -181,8 +176,7 @@ header i::before,
 
 .modal-body {
     background: var(--bs-secondary-bg);
-    padding: 1.5em !important;
-    padding-bottom: 1em !important;
+    padding: 1.5em 1.5em 1em !important;
 }
 
 .modal-body::-webkit-scrollbar {
@@ -237,6 +231,12 @@ header i::before,
 /* ===================== */
 
 @media (min-height: 1850px) and (min-width: 1250px) {
+    header i::before,
+    [class*="theme-label"] i::before,
+    [class*="icons"] i::before {
+        font-size: 3em;
+    }
+
     .icons {
         max-width: 40em;
     }
@@ -244,11 +244,5 @@ header i::before,
     .circle {
         width: 8em;
         height: 8em;
-    }
-
-    header i::before,
-    [class*="theme-label"] i::before,
-    [class*="icons"] i::before {
-        font-size: 3em;
     }
 }
