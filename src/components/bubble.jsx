@@ -94,7 +94,7 @@ export function kaliBody() {
 
 const di = "devicon-";
 
-const Properties = [
+const Details = [
   {
     id: "html",
     icon: `${di}html5-plain`,
@@ -207,18 +207,18 @@ const Properties = [
     icon: "fas fa-pepper-hot",
     color: g.orange,
     title: "FL Studio",
-    body: ` `,
     rank: 4,
   },
   {
     id: "vg",
     icon: "fas fa-gamepad",
     color: g.pink,
-    title: "Game Testing/Competition",
+    title: "Competitive Gaming/Testing",
     body: `<p>
     <Image src="/img/psn-card.png" alt="" />
     </p>`,
     rank: 5,
+    center: true,
   },
   {
     id: "obs",
@@ -242,7 +242,6 @@ const Properties = [
     icon: "fas fa-clapperboard",
     color: g.blue,
     title: "Video Production",
-    body: ` `,
     rank: 3,
   },
   {
@@ -266,7 +265,6 @@ const Properties = [
     icon: `${di}debian-plain`,
     color: g.red,
     title: "Linux (Debian)",
-    body: ` `,
     rank: 4,
   },
   {
@@ -274,7 +272,6 @@ const Properties = [
     icon: `${di}javascript-plain`,
     color: g.yellow,
     title: "Javascript",
-    body: ` `,
     rank: 3,
   },
   {
@@ -282,9 +279,8 @@ const Properties = [
     icon: `${di}nodejs-plain`,
     color: g.green,
     title: "NodeJS",
-    body: ` `,
     rank: 2,
   },
 ];
 
-export default Properties;
+export default Details;

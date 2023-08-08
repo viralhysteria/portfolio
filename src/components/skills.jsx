@@ -1,40 +1,45 @@
 import { useEffect } from "react";
 import DOMPurify from "isomorphic-dompurify";
-import Properties from "./Bubble";
+import Details from "./Bubble";
 import styles from "../styles/skills.module.css";
 
-function Bubble(Properties) {
+function Bubble(Details) {
   useEffect(() => {
     import("bootstrap/js/src/modal");
   }, []);
 
-  const rank = "★".repeat(Properties.rank);
+  const rank = "★".repeat(Details.rank);
 
   return (
     <div className="col-4">
       <div
         className={`${styles.circle} hvr-pulse select`}
         data-bs-html="true"
-        style={{ background: `${Properties.color}` }}
+        style={{ background: `${Details.color}` }}
       >
-        <i
-          className={`${Properties.icon}`}
-          data-bs-toggle="modal"
-          data-bs-target={`#${Properties.id}Modal`}
-        ></i>
+        {Details.body ? (
+          <i
+            className={`${Details.icon}`}
+            data-bs-toggle="modal"
+            data-bs-target={`#${Details.id}Modal`}
+          ></i>
+        ) : (
+          <i className={`${Details.icon}`}></i>
+        )}
       </div>
-      {Properties.body && Properties.body.length > 0 && (
+      {Details.body ? (
         <div
-          id={`${Properties.id}Modal`}
+          id={`${Details.id}Modal`}
           className="modal fade"
           aria-hidden="true"
           data-bs-dismiss="modal"
+          backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-header">
-                <h1 id={`${Properties.id}ModalLabel`} className="modal-title">
-                  {Properties.title}
+                <h1 id={`${Details.id}ModalLabel`} className="modal-title">
+                  {Details.title}
                 </h1>
                 <button
                   type="button"
@@ -45,15 +50,15 @@ function Bubble(Properties) {
               </div>
               <div
                 className={`modal-body fw-normal ${
-                  Properties.center ? "text-center" : "text-start"
+                  Details.center ? "text-center" : "text-start"
                 }`}
                 dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(Properties.body),
+                  __html: DOMPurify.sanitize(Details.body),
                 }}
               ></div>
               <div className="modal-footer">
                 <span className="rank">{rank}</span>
-                {Properties.sage && (
+                {Details.sage && (
                   <p
                     dangerouslySetInnerHTML={{
                       __html: `Drafted using <a href="https://poe.com/sage">Sage</a>`,
@@ -64,7 +69,7 @@ function Bubble(Properties) {
             </div>
           </div>
         </div>
-      )}
+      ) : null }
     </div>
   );
 }
@@ -72,10 +77,10 @@ function Bubble(Properties) {
 export default function SkillsGrid() {
   const rows = [];
 
-  for (let i = 0; i < Properties.length; i += 3) {
+  for (let i = 0; i < Details.length; i += 3) {
     const row = (
       <div className="row justify-content-around" key={i}>
-        {Properties.slice(i, i + 3).map((skill) => (
+        {Details.slice(i, i + 3).map((skill) => (
           <Bubble key={skill.id} {...skill} />
         ))}
       </div>
