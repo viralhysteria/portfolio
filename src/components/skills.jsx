@@ -89,9 +89,9 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="m-auto">
+    <main className="vh-100 m-auto d-flex align-items-center overflow-hidden">
       <div
-        className={`${styles.skills} overflow-hidden animate__animated animate__fadeInUpBig animate__slow`}
+        className={`${styles.skills} animate__animated animate__fadeInUpBig animate__slow`}
       >
         <div className={`${styles.icons}`}>{rows}</div>
       </div>

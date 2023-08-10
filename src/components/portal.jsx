@@ -5,12 +5,12 @@ import Preview from "./Discord";
 export default function Portal() {
   return (
     <>
-      <div id="Header">
+      <div className="d-flex" id="Header">
         <Nav />
       </div>
-      <div className="vh-100 d-flex align-items-center" id="Content">
+      <div className="d-flex" id="Content">
         <SkillsGrid />
-        <Preview />
+        <Preview/> 
       </div>
     </>
   );

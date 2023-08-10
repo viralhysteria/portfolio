@@ -45,7 +45,7 @@ export default function Preview() {
   }
 
   return (
-    <div className={`${styles.container} fixed-bottom`} onClick={inviteTrigger}>
+    <div className="fixed-bottom" onClick={inviteTrigger}>
       <div className={styles.scroll}>
         <ul>{chList()}</ul>
         <ul aria-hidden="true" className={styles.scrollLoop}>

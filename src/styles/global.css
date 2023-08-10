@@ -226,7 +226,7 @@ footer ul {
 }
 
 #bioModal a:hover {
-    color: rgb(93, 80, 211) !important;
+    filter: hue-rotate(90deg);
 }
 
 #bioModal div>div>.modal-footer img {
@@ -236,19 +236,3 @@ footer ul {
 #bioModal div>div>.modal-footer>ul a {
     padding: 0 5px !important;
 }
-
-/* ===================== */
-/* 
-@media (min-height: 1850px) and (min-width: 1250px) {
-
-    header i::before,
-    [class*="theme-label"] i::before,
-    [class*="icons"] i::before {
-        font-size: 3em;
-    }
-
-    .circle {
-        width: 8em;
-        height: 8em;
-    }
-} */
