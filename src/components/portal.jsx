@@ -10,7 +10,7 @@ export default function Portal() {
       </div>
       <div className="d-flex" id="Content">
         <SkillsGrid />
-        <Preview/> 
+        <Preview />
       </div>
     </>
   );

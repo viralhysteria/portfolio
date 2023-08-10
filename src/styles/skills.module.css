@@ -1,10 +1,16 @@
-.skills {
-    margin-bottom: 5vh;
-}
-
 .skills,
 .icons {
     padding: 20px;
+}
+
+.circle:hover {
+    filter: invert(1);
+    transition: filter 0.6s ease-in-out;
+}
+
+.circle:not(:hover) {
+    filter: invert(0);
+    transition: filter 0.6s ease-in-out;
 }
 
 .icons>div>div {
@@ -13,8 +19,6 @@
 }
 
 .circle {
-    width: 6rem;
-    height: 6rem;
     border-radius: 50%;
     overflow: hidden;
     user-select: none;
@@ -29,18 +33,14 @@
     font-size: 1.2rem;
 }
 
-@media (max-width: 575px) {
+@media (min-height: 576px) and (max-height: 1449px) {
     .circle {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    .circle i {
-        font-size: 0.8rem;
+        width: 6rem;
+        height: 6rem;
     }
 }
 
-@media (min-height: 1360px) {
+@media (min-height: 1450px) {
     .circle {
         width: 10rem;
         height: 10rem;

@@ -75,13 +75,13 @@ const KSMap = ({ items }) => {
         className="fs-6 fw-semibold text-uppercase badge rounded-pill m-1"
         style={style}
       >
-        {item}
+        <span>{item}</span>
       </li>
     );
   });
 
   return (
-    <ul className="list-inline d-flex flex-wrap justify-content-center pt-2">
+    <ul className="kaliBadges list-inline d-flex flex-wrap justify-content-center pt-2">
       {KSBadges}
     </ul>
   );
@@ -162,7 +162,7 @@ const Details = [
       I have over 7 years of weekly experience analysing technicals across a wide range of markets including cryptocurrencies, forex, equities, indices as well as a truncated public journal of my calls and research into the markets through my twitter account.
       <br><br>
       The indicators I rely on are non-proprietary:<br>
-      <span class="text-primary">Price / Volume / S&R / Moving Averages / Ichimoku<br>
+      <span style="color: gold">Price / Volume / S&R / Moving Averages / Ichimoku<br>
       Bollinger Bands / AVWAP / VPVR / (Stoch+Std) RSI</span>
     </p>`,
     rank: 4,
@@ -230,10 +230,11 @@ const Details = [
     id: "vg",
     icon: "fas fa-gamepad",
     color: g.pink,
-    title: "Competitive Gaming/Testing",
-    body: `<p>
-    <Image src="/img/psn-card.png" alt="" />
-    </p>`,
+    title: "Competitive Gaming",
+    body: `<div class="container">
+    <Image class="img-fluid" width="400" src="https://card.exophase.com/1/2778775.png" alt="" />
+    <Image class="img-fluid" width="400" src="https://card.psnprofiles.com/1/viralhysteria.png" alt="" />
+    </div>`,
     rank: 5,
     center: true,
   },

@@ -50,11 +50,11 @@ function Bubble(Details) {
             <div className="modal-content">
               <div className="modal-header">
                 <h1 id={`${Details.id}ModalLabel`} className="modal-title">
-                  {Details.title}
+                  <span>{Details.title}</span>
                 </h1>
               </div>
               <div
-                className={`modal-body fw-normal ${
+                className={`modal-body fw-normal rounded mx-3 ${
                   Details.center ? "text-center" : "text-start"
                 }`}
                 dangerouslySetInnerHTML={{

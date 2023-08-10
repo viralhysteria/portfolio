@@ -33,12 +33,16 @@ export default function Nav() {
           <div id="bioModal" className="modal fade" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title" id="bioModalLabel">
-                    Who Am I?
-                  </h1>
+                <div className="modal-header justify-content-center">
+                  <Image
+                    className="img-fluid w-50 nametag animate__animated animate__fadeIn animate__delay-1s"
+                    src="/img/nametag.png"
+                    alt=""
+                    width="600"
+                    height="120"
+                  />
                 </div>
-                <div className="modal-body fw-normal">
+                <div className="modal-body fw-normal rounded mx-3">
                   <p className="about-text fw-normal animate__animated animate__fadeIn">
                     I am a passionate full-stack developer with over 15 years of
                     experience in IT, using a wide variety of operating systems,
@@ -58,15 +62,8 @@ export default function Nav() {
                     approach to swing trading cryptocurrencies.
                   </p>
                 </div>
-                <div className="modal-footer">
-                  <Image
-                    className="img-fluid w-25 nametag animate__animated animate__fadeIn animate__delay-1s"
-                    src="/img/nametag.png"
-                    alt=""
-                    width="100"
-                    height="20"
-                  />
-                  <ul className="nav animate__animated animate__fadeIn animate__delay-1s">
+                <div className="modal-footer d-flex justify-content-end animate__animated animate__fadeIn animate__delay-1s">
+                  <ul className="nav">
                     <a
                       className="nav-link social-discord"
                       href="https://discordapp.com/users/653346377010642944"

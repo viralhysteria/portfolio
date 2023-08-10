@@ -11,7 +11,7 @@
 :root,
 [data-bs-theme=light] {
     --bs-body-bg: #f7f7f7 !important;
-    --bs-secondary-bg: #f1f1f1 !important;
+    --bs-secondary-bg: #eeeeee !important;
     --bs-body-color: #0D1017 !important;
     --bubble-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     --modal-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
@@ -152,7 +152,7 @@ footer ul {
 }
 
 .modal-dialog {
-    max-width: 800px !important;
+    max-width: 40rem !important;
 }
 
 .modal-content {
@@ -162,18 +162,14 @@ footer ul {
 }
 
 .modal-header {
-    padding: 0 !important;
-    bottom: 10px;
-}
-
-.modal-header, .modal-title {
+    padding: 10px 0 !important;
     position: relative;
+    bottom: 5px;
 }
 
 .modal-title {
     font-weight: 400;
     font-size: 1.5em;
-    text-transform: uppercase;
     margin: auto 20px;
 }
 
