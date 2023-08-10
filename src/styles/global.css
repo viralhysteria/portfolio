@@ -221,7 +221,6 @@ footer ul {
     transition: color 0.3s ease-in-out;
 }
 
-
 .social-discord svg:hover {
     color: hsl(232, 90%, 64%)
 }

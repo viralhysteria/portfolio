@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { renderToString } from "react-dom/server";
 
@@ -64,29 +65,62 @@ const kaliStack = {
   ],
 };
 
-export function kaliBody() {
-  const KSMap = ({ items }) => (
-    <ul className="list-inline d-flex flex-wrap">
-      {items.map((item, i) => (
-        <li key={i} className="d-inline">
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
+const randColor = () => {
+  const base = "0123456789ABCDEF";
+  let color = "#";
+
+  for (let i = 0; i < 6; i++) {
+    color += base[Math.floor(Math.random() * 12)];
+  }
+
+  return color;
+};
+
+const KSMap = ({ items }) => {
+  const KSBadges = items.map((item, i) => {
+    const bgColor = randColor();
+    const style = { backgroundColor: bgColor };
+    return (
+      <li
+        key={i}
+        className="fs-6 fw-semibold text-uppercase badge rounded-pill m-1"
+        style={style}
+      >
+        {item}
+      </li>
+    );
+  });
 
   return (
-    <>
-      <span className="fw-bold text-decoration-underline">Frameworks:</span>
-      <KSMap items={kaliStack.framework} />
+    <ul className="list-inline d-flex flex-wrap justify-content-center pt-2">
+      {KSBadges}
+    </ul>
+  );
+};
 
-      <span className="fw-bold text-decoration-underline">Commandline:</span>
+export function KaliBody() {
+  return (
+    <>
+      <span className="fs-5 fw-bold text-decoration-underline">
+        Frameworks:
+      </span>
+      <KSMap items={kaliStack.framework} />
+      <hr />
+      <span className="fs-5 fw-bold text-decoration-underline">
+        Commandline:
+      </span>
       <KSMap items={kaliStack.commandline} />
       <a
-        className="text-danger fw-bold fs-6 pb-3 text-decoration-none"
+        className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-danger text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
       >
         TryHackMe
+      </a>
+      <a
+        className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-success text-decoration-none"
+        href="https://app.hackthebox.com/users/1564442"
+      >
+        HackTheBox
       </a>
     </>
   );
@@ -164,7 +198,7 @@ const Details = [
     icon: "fas fa-dragon",
     color: g.cyan,
     title: "Pentesting w/Kali Linux",
-    body: `${renderToString(kaliBody())}`,
+    body: `${renderToString(KaliBody())}`,
     center: true,
     rank: 4,
   },
@@ -222,12 +256,9 @@ const Details = [
     body: `<p>
     I'm well acquainted with handling complex OBS
     scenes/setups to create aesthetically pleasing yet confluent designs. Livestreaming has
-    offered
-    me a great outlet for improving my ability to perform under pressure whether through solo
-    tasks
-    or multitasking in front of random
-    audiences as well as aiding me in developing stronger social skills through viewer
-    engagement.
+    offered me a great outlet for improving my ability to perform under pressure whether through solo
+    tasks or multitasking in front of random audiences as well as aiding
+    me in developing stronger social skills through viewer engagement.
   </p>`,
     rank: 4,
   },
@@ -243,15 +274,7 @@ const Details = [
     icon: "fas fa-dumbbell",
     color: g.gray,
     title: "Nutrition/Fitness",
-    body: `<p>
-    I have an intermediate foundational understanding of a variety of topics related to strength
-    training<br>
-    e.g., diet structuring, optimizing workout plans, managing supplement cycles
-
-    As well as over 4 years of weekly personal experience training (cut short by a common
-    weightlifting
-    injury, i.e. inguinal hernia)
-    </p>`,
+    body: ``,
     rank: 4,
   },
   {
