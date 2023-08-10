@@ -152,7 +152,7 @@ footer ul {
 }
 
 .modal-dialog {
-    max-width: 600px !important;
+    max-width: 800px !important;
 }
 
 .modal-content {
@@ -162,18 +162,19 @@ footer ul {
 }
 
 .modal-header {
-    padding: 0 0 10px 0 !important;
-    position: relative;
+    padding: 0 !important;
     bottom: 10px;
-    left: 20px;
+}
+
+.modal-header, .modal-title {
+    position: relative;
 }
 
 .modal-title {
     font-weight: 400;
     font-size: 1.5em;
-    position: relative;
-    top: 10px;
     text-transform: uppercase;
+    margin: auto 20px;
 }
 
 .modal-body {

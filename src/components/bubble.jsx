@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { renderToString } from "react-dom/server";
+import { randColor } from "../utils/randColor";
 
 const gradients = [
   { name: "red", colors: ["#e35d6a", "#842029"] },
@@ -63,17 +63,6 @@ const kaliStack = {
     "sublist3r",
     "sqlmap",
   ],
-};
-
-const randColor = () => {
-  const base = "0123456789ABCDEF";
-  let color = "#";
-
-  for (let i = 0; i < 6; i++) {
-    color += base[Math.floor(Math.random() * 12)];
-  }
-
-  return color;
 };
 
 const KSMap = ({ items }) => {

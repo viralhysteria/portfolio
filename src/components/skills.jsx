@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Details from "./Bubble";
 import styles from "../styles/skills.module.css";
+import { randColor } from "../utils/randColor";
 
 function Bubble(Details) {
   useEffect(() => {
@@ -9,6 +10,16 @@ function Bubble(Details) {
   }, []);
 
   const rank = "★".repeat(Details.rank);
+
+  const stars = Array.from(rank).map((item, i) => {
+    const starColor = randColor();
+    const style = { color: starColor };
+    return (
+      <span key={i} className="rank" style={style}>
+        {item}
+      </span>
+    );
+  });
 
   return (
     <div className="col-sm-4">
@@ -41,12 +52,6 @@ function Bubble(Details) {
                 <h1 id={`${Details.id}ModalLabel`} className="modal-title">
                   {Details.title}
                 </h1>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
               </div>
               <div
                 className={`modal-body fw-normal ${
@@ -57,7 +62,7 @@ function Bubble(Details) {
                 }}
               ></div>
               <div className="modal-footer">
-                <span className="rank">{rank}</span>
+                <span className="rank">{stars}</span>
                 {Details.sage && (
                   <p
                     dangerouslySetInnerHTML={{
