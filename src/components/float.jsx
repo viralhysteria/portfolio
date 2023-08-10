@@ -68,25 +68,25 @@ export default function Nav() {
                   />
                   <ul className="nav animate__animated animate__fadeIn animate__delay-1s">
                     <a
-                      className="nav-link"
+                      className="nav-link social-discord"
                       href="https://discordapp.com/users/653346377010642944"
                     >
                       <FontAwesomeIcon icon={faDiscord} fixedWidth />
                     </a>
                     <a
-                      className="nav-link"
+                      className="nav-link social-twitter"
                       href="https://twitter.com/viralhysteria"
                     >
                       <FontAwesomeIcon icon={faTwitter} fixedWidth />
                     </a>
                     <a
-                      className="nav-link"
+                      className="nav-link social-github"
                       href="https://github.com/viralhysteria"
                     >
                       <FontAwesomeIcon icon={faGithub} fixedWidth />
                     </a>
                     <a
-                      className="nav-link"
+                      className="nav-link social-twitch"
                       href="https://twitch.tv/viralhysteria/about"
                     >
                       <FontAwesomeIcon icon={faTwitch} fixedWidth />

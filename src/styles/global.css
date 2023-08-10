@@ -217,16 +217,33 @@ footer ul {
     font-size: 1em !important;
 }
 
+[class*="social-"] svg:hover {
+    transition: color 0.3s ease-in-out;
+}
+
+
+.social-discord svg:hover {
+    color: hsl(232, 90%, 64%)
+}
+
+.social-twitter svg:hover {
+    color: hsl(201, 100%, 48%)
+}
+
+.social-github svg:hover {
+    color: hsl(11, 40%, 47%)
+}
+
+.social-twitch svg:hover {
+    color: hsl(265, 99%, 63%)
+}
+
 /* ===================== */
 
 #Header {
     position: absolute;
     top: 20px;
     left: 20px;
-}
-
-#bioModal a:hover {
-    filter: hue-rotate(90deg);
 }
 
 #bioModal div>div>.modal-footer img {
