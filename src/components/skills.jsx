@@ -11,7 +11,7 @@ function Bubble(Details) {
   const rank = "★".repeat(Details.rank);
 
   return (
-    <div className="col-4">
+    <div className="col-sm-4">
       <div
         className={`${styles.circle} hvr-pulse select`}
         data-bs-html="true"
@@ -89,9 +89,11 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="container">
-      <div className="skills overflow-hidden animate__animated animate__fadeInUpBig animate__slow">
-        <div className="icons">{rows}</div>
+    <main className="m-auto">
+      <div
+        className={`${styles.skills} overflow-hidden animate__animated animate__fadeInUpBig animate__slow`}
+      >
+        <div className={`${styles.icons}`}>{rows}</div>
       </div>
     </main>
   );

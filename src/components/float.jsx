@@ -9,7 +9,7 @@ import {
 
 export default function Nav() {
   return (
-    <header className="container">
+    <header className="m-auto">
       <div style={{ pointerEvents: "auto" }}>
         <ul className="nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center animate__animated animate__slower animate__fadeInDownBig">
           <li className="nav-link px-2 select animate__animated animate__bounce animate__slow">

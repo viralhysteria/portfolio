@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.scroll  {
+.scroll {
   --gap: 0.5rem;
   display: flex;
   color: var(--bs-body-color);
@@ -34,13 +34,14 @@
 .scroll ul li {
   flex: 0 0 auto;
   font-family: inherit;
+  font-size: 1rem;
   background: transparent;
   opacity: 0.8;
   margin: 2px;
   padding: 0 0.5rem;
   border-radius: 0.25rem;
   text-align: center;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 .scroll ul li:hover {
@@ -73,6 +74,7 @@
   from {
     transform: translateX(calc(100% + var(--gap)));
   }
+
   to {
     transform: translateX(0);
   }
@@ -82,6 +84,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-100% - var(--gap)));
   }
@@ -92,4 +95,3 @@
     animation-play-state: paused !important;
   }
 }
-

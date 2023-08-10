@@ -1,6 +1,7 @@
 :root {
     --fs-7: 0.75rem;
     --fs-8: 0.5rem;
+
     .animate__animated.animate__fadeInUpBig,
     .animate__aniamted.animate__fadeInDownBig {
         --animate-duration: 1.2s;
@@ -60,10 +61,6 @@
     color: var(--bs-body-bg);
 }
 
-body {
-    width: 100%;
-    height: 100%;
-}
 
 header i::before,
 [class*="theme-label"] i::before,
@@ -103,6 +100,9 @@ footer ul {
     background-size: 16px 16px;
 }
 
+.pattern+div>div:nth-child(2)>main {
+    margin-bottom: 10px;
+}
 
 .select {
     cursor: pointer;
@@ -133,11 +133,6 @@ footer ul {
     padding-right: 0.4rem !important;
 }
 
-.row>div {
-    text-align: center;
-    padding: 1em;
-}
-
 .modal * {
     border: none !important;
     z-index: 1050 !important;
@@ -156,6 +151,10 @@ footer ul {
     transition: opacity 0.5s ease-in-out;
 }
 
+.modal-dialog {
+    max-width: 600px !important;
+}
+
 .modal-content {
     padding: 1em 0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -170,7 +169,8 @@ footer ul {
 }
 
 .modal-title {
-    font-size: 1.2em;
+    font-weight: 400;
+    font-size: 1.5em;
     position: relative;
     top: 10px;
     text-transform: uppercase;
@@ -187,11 +187,12 @@ footer ul {
 
 .modal-body p,
 .modal-body ul {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 .modal-footer {
-    font-size: 0.8em;
+    font-size: 1em;
     padding: 0 15px !important;
     margin-top: 5px;
     justify-content: space-between !important;
@@ -218,6 +219,12 @@ footer ul {
 
 /* ===================== */
 
+#Header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 #bioModal a:hover {
     color: rgb(93, 80, 211) !important;
 }
@@ -231,20 +238,17 @@ footer ul {
 }
 
 /* ===================== */
-
+/* 
 @media (min-height: 1850px) and (min-width: 1250px) {
+
     header i::before,
     [class*="theme-label"] i::before,
     [class*="icons"] i::before {
         font-size: 3em;
     }
 
-    .icons {
-        max-width: 40em;
-    }
-
     .circle {
         width: 8em;
         height: 8em;
     }
-}
+} */

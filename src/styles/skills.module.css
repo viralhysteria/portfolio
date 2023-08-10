@@ -1,24 +1,24 @@
-.incomplete {
-    filter: brightness(50%);
+.skills {
+    margin-bottom: 5vh;
 }
 
+.skills,
 .icons {
-    padding: 40px;
-    max-width: 30em;
+    padding: 20px;
 }
 
-.row>div {
+.icons>div>div {
     text-align: center;
-    padding: 1em;
+    padding: 10px;
 }
 
 .circle {
-    width: 100px;
-    height: 100px;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     overflow: hidden;
     user-select: none;
-    transition: filter 1s ease-in-out;
+    transition: width 1s ease;
 }
 
 .circle i {
@@ -26,15 +26,27 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    font-size: 1.5rem;
 }
 
-@media (min-height: 1850px) and (min-width: 1250px) {
-    .icons {
-        max-width: 40em;
+@media (max-width: 575px) {
+    .circle {
+        width: 4rem;
+        height: 4rem;
     }
 
+    .circle i {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-height: 2000px) {
     .circle {
-        width: 8em;
-        height: 8em;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .circle i {
+        font-size: 1.8rem;
     }
 }

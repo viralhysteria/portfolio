@@ -32,7 +32,7 @@ if (typeof window !== "undefined") {
     // fix animate.css conflict w/ bootstrap classes
     // preventing modals from displaying properly
     const nav = document.querySelector(".nav");
-    const skills = document.querySelector(".skills");
+    const skills = document.querySelector("[class^='skills']");
     const nametag = document.querySelector(".nametag");
 
     nav.addEventListener("animationend", function () {
