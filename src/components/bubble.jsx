@@ -151,7 +151,7 @@ const Details = [
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
     color: g.red,
-    title: "Technical Analysis",
+    title: "Technical Analysis + Swing Trading",
     body: `<p>
       As all investors tend to do, I tried to find the closest thing to a holy grail I could when trying to navigate the markets in a way that wouldn't make me lose my head. I can't say what exactly drew me to technical analysis out the gate, but I continue to constantly find new things that keep me engaged.
       <br><br>
@@ -178,7 +178,7 @@ const Details = [
       <br><br>
       Once I managed to get a slightly better PC, I started delving into gaming and ended up with a virus called <a href="https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Rogue:Wi FakeSmoke">WiniBlueSoft</a> from downloading a rogue torrent. This was the event that led me to st digging more into the filesystem hierarchy in a drawn-out attempt to try and "fight off" the virus.
       <br><br>
-      Whilst my attempts to thwart the virus were ultimately in vain, I continued to have an interest having a deeper understanding of how the operating system functions as a whole. This is what inevitab likely led me down the path I now find myself on.
+      Whilst my attempts to thwart the virus were ultimately in vain, I continued to have an interest having a deeper understanding of how the operating system functions as a whole. This is what inevitably led me down the path I now find myself on.
     </p>`,
     rank: 5,
   },
@@ -186,7 +186,7 @@ const Details = [
     id: "oscp",
     icon: "fas fa-dragon",
     color: g.cyan,
-    title: "Pentesting w/Kali Linux",
+    title: "Pentesting w/Kali + Offensive Security",
     body: `${renderToString(KaliBody())}`,
     center: true,
     rank: 4,

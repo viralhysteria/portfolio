@@ -147,7 +147,7 @@ footer ul {
 }
 
 .modal-backdrop.show {
-    opacity: 0.2 !important;
+    opacity: 0.75 !important;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -157,8 +157,8 @@ footer ul {
 
 .modal-content {
     padding: 1em 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px !important;
+    background: transparent !important;
 }
 
 .modal-header {
@@ -167,10 +167,11 @@ footer ul {
     bottom: 5px;
 }
 
-.modal-title {
-    font-weight: 400;
-    font-size: 1.5em;
+.modal-title span {
+    font-weight: 7nm 00;
+    font-size: 2em;
     margin: auto 20px;
+    text-transform: uppercase;
 }
 
 .modal-body {
@@ -189,14 +190,14 @@ footer ul {
 }
 
 .modal-footer {
-    font-size: 1em;
+    font-size: 1rem;
     padding: 0 15px !important;
     margin-top: 5px;
     justify-content: space-between !important;
 }
 
 .modal-footer a {
-    color: var(--bs-body-color) !important;
+    color: #f7f7f7 !important;
     text-decoration: none;
 }
 
@@ -205,13 +206,9 @@ footer ul {
     top: 5px;
 }
 
-.rank {
-    color: var(--bs-danger);
-}
-
 .rank,
 .modal-footer a {
-    font-size: 1em !important;
+    font-size: 1.2rem !important;
 }
 
 [class*="social-"] svg:hover {
