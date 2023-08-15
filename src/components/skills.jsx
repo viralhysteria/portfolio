@@ -63,13 +63,6 @@ function Bubble(Details) {
               ></div>
               <div className="modal-footer justify-content-center">
                 <span className="rank">{stars}</span>
-                {Details.sage && (
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: `Drafted using <a href="https://poe.com/sage">Sage</a>`,
-                    }}
-                  ></p>
-                )}
               </div>
             </div>
           </div>

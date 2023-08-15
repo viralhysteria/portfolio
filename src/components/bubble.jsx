@@ -99,6 +99,7 @@ export function KaliBody() {
         Commandline:
       </span>
       <KSMap items={kaliStack.commandline} />
+      <hr/>
       <a
         className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-danger text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
@@ -145,7 +146,6 @@ const Details = [
       I enjoy the challenge of creating designs that not only look great but also have a purpose and meaning behind them. I'm constantly exploring new techniques and software to keep up-to-date with the latest trends and innovations in the industry. Overall, my experience in traditional art and digital design, combined with my extensive Photoshop knowledge, makes me a strong asset to any team seeking a skilled and passionate graphic designer.
     </p>`,
     rank: 3,
-    sage: true,
   },
   {
     id: "trade",
@@ -166,7 +166,6 @@ const Details = [
       Bollinger Bands / AVWAP / VPVR / (Stoch+Std) RSI</span>
     </p>`,
     rank: 4,
-    sage: true,
   },
   {
     id: "win",
@@ -232,8 +231,8 @@ const Details = [
     color: g.pink,
     title: "Competitive Gaming",
     body: `<div class="container">
-    <Image class="img-fluid" width="400" src="https://card.exophase.com/1/2778775.png" alt="" />
-    <Image class="img-fluid" width="400" src="https://card.psnprofiles.com/1/viralhysteria.png" alt="" />
+    <Image class="img-fluid" width="600" src="https://card.exophase.com/1/2778775.png" alt="" />
+    <Image class="img-fluid" width="600" src="https://card.psnprofiles.com/1/viralhysteria.png" alt="" />
     </div>`,
     rank: 5,
     center: true,
