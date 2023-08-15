@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Inter } from "next/font/google";
+import Nav from "../components/Float";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" data-bs-theme={dataBsTheme}>
       <body className={inter.className}>{children}</body>
+      <div className="d-flex" id="Header">
+        <Nav />
+      </div>
     </html>
   );
 }
