@@ -1,14 +1,15 @@
 import Link from "next/link";
-import Layout from "../app/layout";
+import Nav from "../components/Float";
 import Portal from "../components/Portal";
 
 export default function Index() {
   return (
     <>
-    <Layout>
       <div className="pattern"></div>
+      <div className="d-flex" id="Header">
+        <Nav />
+      </div>
       <Portal />
-    </Layout>
     </>
   );
 }
