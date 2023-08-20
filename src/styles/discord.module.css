@@ -13,7 +13,7 @@
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  width: 800px;
+  width: 50rem;
   margin: 0 auto 20px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 75%);
 }

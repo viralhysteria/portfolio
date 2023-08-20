@@ -7,7 +7,7 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-export default function Nav() {
+export default function QuickMenu() {
   return (
     <header className="m-auto">
       <div style={{ pointerEvents: "auto" }}>

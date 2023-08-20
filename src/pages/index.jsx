@@ -1,15 +1,20 @@
 import Link from "next/link";
-import Nav from "../components/Float";
-import Portal from "../components/Portal";
+import QuickMenu from "../components/Float";
+import SkillsGrid from "../components/Skills";
+import DiscordMarquee from "../components/Discord";
 
-export default function Index() {
+// Index
+export default function Home() {
   return (
     <>
       <div className="pattern"></div>
       <div className="d-flex" id="Header">
-        <Nav />
+        <QuickMenu />
       </div>
-      <Portal />
+      <div className="d-flex" id="Content">
+        <SkillsGrid />
+        <DiscordMarquee />
+      </div>
     </>
   );
 }
