@@ -1,37 +1,12 @@
 import { useEffect, useState } from "react";
+import fetchChannels from "../utils/discordUtils";
 import styles from "../styles/discord.module.css";
 
 export default function DiscordMarquee() {
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
-    const fetchChannels = async () => {
-      try {
-        const response = await fetch("/api/channels");
-        if (response.ok) {
-          const data = await response.json();
-          // const hiddenChannels = process.env.discord_hidden_channels.split(",");
-          // const filteredChannels = hiddenChannels.length > 0
-          //   ? data.filter((channel) => {
-          //       return (
-          //         typeof channel.position === "number" &&
-          //         !hiddenChannels.some((name) => channel.name.includes(name))
-          //       );
-          //     })
-          //   : data;
-          const sortedChannels = data.sort(
-            (a, b) => a.position - b.position
-          );
-          setChannels(sortedChannels);
-        } else {
-          console.error("Error:", response.status, response.statusText);
-        }
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    };
-
-    fetchChannels();
+    fetchChannels(setChannels);
   }, []);
 
   function inviteTrigger() {
@@ -39,7 +14,9 @@ export default function DiscordMarquee() {
   }
 
   function channelMap() {
-    return channels.map((channel) => <li key={channel.id}>{channel.name}</li>);
+    return channels.map((channel) => (
+      <li key={channel.id}>{channel.name}</li>
+    ));
   }
 
   return (

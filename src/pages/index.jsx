@@ -3,7 +3,6 @@ import QuickMenu from "../components/Float";
 import SkillsGrid from "../components/Skills";
 import DiscordMarquee from "../components/Discord";
 
-// Index
 export default function Home() {
   return (
     <>
