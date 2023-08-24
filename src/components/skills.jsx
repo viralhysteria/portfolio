@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import DOMPurify from "isomorphic-dompurify";
 import Details from "./Bubble";
 import styles from "../styles/skills.module.css";
 import { randColor } from "../utils/randColor";
@@ -47,7 +46,7 @@ function Bubble(Details) {
           className="modal fade"
           aria-hidden="true"
           data-bs-dismiss="modal"
-          backdrop="false"
+          backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div className="modal-content">
@@ -96,9 +95,9 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="d-flex m-auto align-items-center overflow-hidden">
+    <main className="d-flex m-auto">
       <div
-        className={`flex-grow-1 ${styles.skills} animate__animated animate__fadeInUpBig animate__slow`}
+        className={`${styles.skills} flex-grow-1 animate__animated animate__fadeInUpBig animate__slow`}
       >
         <div className={`${styles.icons}`}>{rows}</div>
       </div>

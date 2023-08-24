@@ -31,20 +31,18 @@ if (typeof window !== "undefined") {
 
     // fix animate.css conflict w/ bootstrap classes
     // preventing modals from displaying properly
+    // Function to remove classes on animationend event
+    function removeClassesOnAnimationEnd(element, classesToRemove) {
+      element.addEventListener("animationend", function () {
+        element.classList.remove(...classesToRemove);
+      });
+    }
+
     const nav = document.querySelector(".nav");
     const skills = document.querySelector("[class^='skills']");
     const nametag = document.querySelector(".nametag");
-
-    nav.addEventListener("animationend", function () {
-      setTimeout(() => {
-        nav.classList.remove("animated", "animate__fadeInDownBig");
-      }, 1000);
-      skills.addEventListener("animationend", function () {
-        skills.classList.remove("animated", "animate__fadeInUpBig");
-        nametag.addEventListener("animationend", function () {
-          nametag.classList.remove("animated", "animate__zoomIn");
-        });
-      });
-    });
+    removeClassesOnAnimationEnd(nav, ["animated", "animate__fadeInDownBig"]);
+    removeClassesOnAnimationEnd(skills, ["animated", "animate__fadeInUpBig"]);
+    removeClassesOnAnimationEnd(nametag, ["animated", "animate__zoomIn"]);
   });
 }
