@@ -1,19 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Details from "./Bubble";
 import styles from "../styles/skills.module.css";
 import { randColor } from "../utils/randColor";
 
 function Bubble(Details) {
+  const [starColor, setStarColor] = useState([]);
+
   useEffect(() => {
     import("bootstrap/js/src/modal");
-  }, []);
+    const colors = Array.from({ length: Details.rank }, () => randColor());
+    setStarColor(colors);
+  }, [Details.rank]);
 
   const rank = "★".repeat(Details.rank);
 
   const stars = Array.from(rank).map((item, i) => {
-    const starColor = randColor();
-    const style = { color: starColor };
+    const style = { color: starColor[i] };
     return (
       <span key={i} className="rank" style={style}>
         {item}
@@ -22,7 +25,7 @@ function Bubble(Details) {
   });
 
   return (
-    <div className="col-sm-4">
+    <div className="col-4">
       <div
         className={`${styles.circle} hvr-pulse select`}
         data-bs-html="true"
@@ -44,12 +47,15 @@ function Bubble(Details) {
           className="modal fade"
           aria-hidden="true"
           data-bs-dismiss="modal"
-          backdrop="static"
+          backdrop="false"
         >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-header justify-content-center">
-                <h1 id={`${Details.id}ModalLabel`} className="modal-title badge rounded-pill">
+                <h1
+                  id={`${Details.id}ModalLabel`}
+                  className="modal-title badge rounded-pill"
+                >
                   <span>{Details.title}</span>
                 </h1>
               </div>
@@ -57,10 +63,13 @@ function Bubble(Details) {
                 className={`modal-body fw-normal rounded mx-3 ${
                   Details.center ? "text-center" : "text-start"
                 }`}
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(Details.body),
-                }}
-              ></div>
+              >
+                {typeof Details.body === "string" ? (
+                  <div dangerouslySetInnerHTML={{ __html: Details.body }} />
+                ) : (
+                  Details.body
+                )}
+              </div>
               <div className="modal-footer justify-content-center">
                 <span className="rank">{stars}</span>
               </div>
@@ -87,9 +96,9 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="vh-100 m-auto d-flex align-items-center overflow-hidden">
+    <main className="d-flex m-auto align-items-center overflow-hidden">
       <div
-        className={`${styles.skills} animate__animated animate__fadeInUpBig animate__slow`}
+        className={`flex-grow-1 ${styles.skills} animate__animated animate__fadeInUpBig animate__slow`}
       >
         <div className={`${styles.icons}`}>{rows}</div>
       </div>

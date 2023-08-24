@@ -33,10 +33,6 @@ export default async function fetchChannels (setChannels) {
         return result;
       }, []);
 
-      orderedChannels.forEach((e) => {
-        console.log('{ id: "' + e.id + '" | ' + e.name + ",")
-      })
-
       setChannels(orderedChannels);
     } else {
       console.error("Error:", response.status, response.statusText);

@@ -1,4 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useState, useEffect } from 'react';
 import { renderToString } from "react-dom/server";
 import { randColor } from "../utils/randColor";
 
@@ -65,9 +66,9 @@ const kaliStack = {
   ],
 };
 
-const KSMap = ({ items }) => {
+const KSMap = ({ items, colors }) => {
   const KSBadges = items.map((item, i) => {
-    const bgColor = randColor();
+    const bgColor = colors[i];
     const style = { backgroundColor: bgColor };
     return (
       <li
@@ -87,28 +88,41 @@ const KSMap = ({ items }) => {
   );
 };
 
+
 export function KaliBody() {
+  const [frameworkColors, setFrameworkColors] = useState([]);
+  const [commandlineColors, setCommandlineColors] = useState([]);
+
+  useEffect(() => {
+    if (frameworkColors.length === 0) {
+      setFrameworkColors(kaliStack.framework.map(() => randColor()));
+    }
+    if (commandlineColors.length === 0) {
+      setCommandlineColors(kaliStack.commandline.map(() => randColor()));
+    }
+  }, [frameworkColors, commandlineColors]);
+
   return (
     <>
-      <span className="fs-5 fw-bold text-decoration-underline">
-        Frameworks:
-      </span>
-      <KSMap items={kaliStack.framework} />
+      <span className="fs-5 fw-bold text-decoration-underline">Frameworks:</span>
+      <KSMap items={kaliStack.framework} colors={frameworkColors} />
       <hr />
-      <span className="fs-5 fw-bold text-decoration-underline">
-        Commandline:
-      </span>
-      <KSMap items={kaliStack.commandline} />
+      <span className="fs-5 fw-bold text-decoration-underline">Commandline:</span>
+      <KSMap items={kaliStack.commandline} colors={commandlineColors} />
       <hr/>
       <a
         className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-danger text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         TryHackMe
       </a>
       <a
         className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-success text-decoration-none"
         href="https://app.hackthebox.com/users/1564442"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         HackTheBox
       </a>
@@ -186,7 +200,7 @@ const Details = [
     icon: "fas fa-dragon",
     color: g.cyan,
     title: "Pentesting w/Kali + Offensive Security",
-    body: `${renderToString(KaliBody())}`,
+    body: <KaliBody />,
     center: true,
     rank: 4,
   },

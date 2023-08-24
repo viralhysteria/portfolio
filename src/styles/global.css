@@ -144,7 +144,7 @@ footer ul {
 }
 
 .modal-backdrop.show {
-    opacity: 0.75 !important;
+    opacity: 0.8 !important;
     transition: opacity 0.5s ease-in-out;
 }
 

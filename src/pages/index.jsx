@@ -10,7 +10,7 @@ export default function Home() {
       <div className="d-flex" id="Header">
         <QuickMenu />
       </div>
-      <div className="d-flex" id="Content">
+      <div className="d-flex" id="Content" style={{minHeight: "100vh"}}>
         <SkillsGrid />
         <DiscordMarquee />
       </div>
