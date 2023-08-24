@@ -1,5 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { renderToString } from "react-dom/server";
 import { randColor } from "../utils/randColor";
 
@@ -88,7 +88,6 @@ const KSMap = ({ items, colors }) => {
   );
 };
 
-
 export function KaliBody() {
   const [frameworkColors, setFrameworkColors] = useState([]);
   const [commandlineColors, setCommandlineColors] = useState([]);
@@ -104,12 +103,16 @@ export function KaliBody() {
 
   return (
     <>
-      <span className="fs-5 fw-bold text-decoration-underline">Frameworks:</span>
+      <span className="fs-5 fw-bold text-decoration-underline">
+        Frameworks:
+      </span>
       <KSMap items={kaliStack.framework} colors={frameworkColors} />
       <hr />
-      <span className="fs-5 fw-bold text-decoration-underline">Commandline:</span>
+      <span className="fs-5 fw-bold text-decoration-underline">
+        Commandline:
+      </span>
       <KSMap items={kaliStack.commandline} colors={commandlineColors} />
-      <hr/>
+      <hr />
       <a
         className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-danger text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
