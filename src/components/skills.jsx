@@ -59,9 +59,7 @@ function Bubble(Details) {
                 </h1>
               </div>
               <div
-                className={`modal-body fw-normal rounded mx-3 ${
-                  Details.center ? "text-center" : "text-start"
-                }`}
+                className={`modal-body fw-normal rounded mx-3`}
               >
                 {typeof Details.body === "string" ? (
                   <div dangerouslySetInnerHTML={{ __html: Details.body }} />

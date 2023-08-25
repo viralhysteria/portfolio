@@ -102,7 +102,7 @@ export function KaliBody() {
   }, [frameworkColors, commandlineColors]);
 
   return (
-    <>
+    <div className="text-center">
       <span className="fs-5 fw-bold text-decoration-underline">
         Frameworks:
       </span>
@@ -129,7 +129,7 @@ export function KaliBody() {
       >
         HackTheBox
       </a>
-    </>
+    </div>
   );
 }
 
@@ -204,7 +204,6 @@ const Details = [
     color: g.cyan,
     title: "Pentesting w/Kali + Offensive Security",
     body: <KaliBody />,
-    center: true,
     rank: 4,
   },
   {
@@ -252,7 +251,6 @@ const Details = [
     <Image class="img-fluid" width="600" src="https://card.psnprofiles.com/1/viralhysteria.png" alt="" />
     </div>`,
     rank: 5,
-    center: true,
   },
   {
     id: "obs",

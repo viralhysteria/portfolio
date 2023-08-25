@@ -31,7 +31,6 @@ if (typeof window !== "undefined") {
 
     // fix animate.css conflict w/ bootstrap classes
     // preventing modals from displaying properly
-    // Function to remove classes on animationend event
     function removeClassesOnAnimationEnd(element, classesToRemove) {
       element.addEventListener("animationend", function () {
         element.classList.remove(...classesToRemove);

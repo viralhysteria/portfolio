@@ -173,7 +173,7 @@ footer ul {
 
 .modal-body {
     background: var(--bs-secondary-bg);
-    padding: 1.5em 1.5em 1em !important;
+    padding: 1.5em 1.5em !important;
 }
 
 .modal-body::-webkit-scrollbar {
