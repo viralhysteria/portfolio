@@ -14,9 +14,7 @@ export default function DiscordMarquee() {
   }
 
   function channelMap() {
-    return channels.map((channel) => (
-      <li key={channel.id}>{channel.name}</li>
-    ));
+    return channels.map((channel) => <li key={channel.id}>{channel.name}</li>);
   }
 
   return (
