@@ -1,16 +1,18 @@
 :root {
     --fs-7: 0.75rem;
     --fs-8: 0.5rem;
+    --fade-animate-duration: 1.2s;
+    --light: #f7f7f7;
+}
 
-    .animate__animated.animate__fadeInUpBig,
-    .animate__aniamted.animate__fadeInDownBig {
-        --animate-duration: 1.2s;
-    }
+.animate__animated.animate__fadeInUpBig,
+.animate__animated.animate__fadeInDownBig {
+    --animate-duration: var(--fade-animate-duration);
 }
 
 :root,
 [data-bs-theme=light] {
-    --bs-body-bg: #f7f7f7 !important;
+    --bs-body-bg: var(--light) !important;
     --bs-secondary-bg: #eeeeee !important;
     --bs-body-color: #0D1017 !important;
     --bubble-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
@@ -20,7 +22,7 @@
 [data-bs-theme=dark] {
     --bs-body-bg: #0D1017 !important;
     --bs-secondary-bg: #171c29 !important;
-    --bs-body-color: #f7f7f7 !important;
+    --bs-body-color: var(--light) !important;
     --bubble-shadow: none;
     --modal-shadow: none;
 }
@@ -116,7 +118,6 @@ footer ul {
 }
 
 .nav-link {
-    font-size: 1em !important;
     padding: 0.2rem !important;
     color: var(--bs-body-color) !important;
 }
@@ -128,84 +129,6 @@ footer ul {
 
 .breadcrumb-item+.breadcrumb-item:before {
     padding-right: 0.4rem !important;
-}
-
-.modal * {
-    border: none !important;
-    z-index: 1050 !important;
-}
-
-.btn-close {
-    display: none;
-}
-
-.modal-backdrop {
-    pointer-events: none;
-}
-
-.modal-backdrop.show {
-    opacity: 0.8 !important;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.modal-dialog {
-    max-width: 40rem !important;
-}
-
-.modal-content {
-    padding: 1em 0;
-    border-radius: 10px !important;
-    background: transparent !important;
-}
-
-.modal-header {
-    padding: 10px 0 !important;
-    position: relative;
-    bottom: 5px;
-}
-
-.modal-title span {
-    font-weight: 7nm 00;
-    font-size: 2em;
-    margin: auto 20px;
-    text-transform: uppercase;
-}
-
-.modal-body {
-    background: var(--bs-secondary-bg);
-    padding: 1.5em 1.5em !important;
-}
-
-.modal-body::-webkit-scrollbar {
-    background: transparent;
-}
-
-.modal-body p,
-.modal-body ul {
-    font-size: 1.2rem;
-    font-weight: 400;
-}
-
-.modal-footer {
-    font-size: 1rem;
-    padding: 0 15px !important;
-    margin-top: 5px;
-    justify-content: space-between !important;
-}
-
-.modal-footer a {
-    color: #f7f7f7 !important;
-    text-decoration: none;
-}
-
-.modal-footer>*:nth-child(-n+2) {
-    position: relative;
-    top: 5px;
-}
-
-.rank,
-.modal-footer a {
-    font-size: 1.2rem !important;
 }
 
 [class*="social-"] svg:hover {

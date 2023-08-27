@@ -1,9 +1,10 @@
 import Head from "next/head";
-import "../script";
-import "../styles/global.css";
-import "bootstrap/dist/css/bootstrap.css";
 import "animate.css";
 import "devicon/devicon.min.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "../styles/global.css";
+import "../styles/scss/main.scss"
+import "../script";
 
 export default function App({ Component, pageProps }) {
   return (

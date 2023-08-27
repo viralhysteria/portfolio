@@ -47,7 +47,7 @@ const KSMap = ({ items, colors }) => {
     return (
       <li
         key={i}
-        className="fs-6 fw-semibold text-uppercase badge rounded-pill m-1"
+        className="fs-6 fw-semibold text-uppercase badge rounded m-1"
         style={style}
       >
         <span>{item}</span>
@@ -56,7 +56,7 @@ const KSMap = ({ items, colors }) => {
   });
 
   return (
-    <ul className="kaliBadges list-inline d-flex flex-wrap justify-content-center pt-2">
+    <ul className="kaliBadges pt-2 justify-content-end">
       {KSBadges}
     </ul>
   );

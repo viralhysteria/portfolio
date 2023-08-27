@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import Details from "./Bubble";
+import Properties from "./Bubble";
 import styles from "../styles/skills.module.css";
 import { randColor } from "../utils/randColor";
 
-function Bubble(Details) {
+function Bubble(Properties) {
   const [starColor, setStarColor] = useState([]);
 
   useEffect(() => {
     import("bootstrap/js/src/modal");
-    const colors = Array.from({ length: Details.rank }, () => randColor());
+    const colors = Array.from({ length: Properties.rank }, () => randColor());
     setStarColor(colors);
-  }, [Details.rank]);
+  }, [Properties.rank]);
 
-  const rank = "★".repeat(Details.rank);
+  const rank = "★".repeat(Properties.rank);
 
   const stars = Array.from(rank).map((item, i) => {
     const style = { color: starColor[i] };
     return (
-      <span key={i} className="rank" style={style}>
+      <span key={i} className="rank" style={{ ...style, fontSize: "1.5rem" }}>
         {item}
       </span>
     );
@@ -26,47 +26,48 @@ function Bubble(Details) {
   return (
     <div className="col-4">
       <div
-        className={`${styles.circle} hvr-pulse select`}
+        className={`${styles.bubble} hvr-pulse select`}
         data-bs-html="true"
-        style={{ background: `${Details.color}` }}
+        style={{ background: `${Properties.color}` }}
       >
-        {Details.body ? (
+        {Properties.body ? (
           <i
-            className={`${Details.icon}`}
+            className={`${Properties.icon}`}
             data-bs-toggle="modal"
-            data-bs-target={`#${Details.id}Modal`}
+            data-bs-target={`#${Properties.id}Modal`}
           ></i>
         ) : (
-          <i className={`${Details.icon}`}></i>
+          <i className={`${Properties.icon}`}></i>
         )}
       </div>
-      {Details.body ? (
+      {Properties.body ? (
         <div
-          id={`${Details.id}Modal`}
+          id={`${Properties.id}Modal`}
           className="modal fade"
           aria-hidden="true"
           data-bs-dismiss="modal"
           backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div className="modal-content">
-              <div className="modal-header justify-content-center">
-                <h1
-                  id={`${Details.id}ModalLabel`}
-                  className="modal-title badge rounded-pill"
-                >
-                  <span>{Details.title}</span>
-                </h1>
-              </div>
-              <div className={`modal-body fw-normal rounded mx-3`}>
-                {typeof Details.body === "string" ? (
-                  <div dangerouslySetInnerHTML={{ __html: Details.body }} />
+            <div className="modal-content overflow-visible">
+              <div className={`modal-body fw-normal text-end rounded mx-3`}>
+                <div className="modal-header position-relative">
+                  <h1
+                    id={`${Properties.id}ModalLabel`}
+                    className="modal-title text-start badge rounded-pill"
+                  >
+                    <span className="text-break">{Properties.title}</span>
+                    <hr />
+                  </h1>
+                </div>
+                {typeof Properties.body === "string" ? (
+                  <div dangerouslySetInnerHTML={{ __html: Properties.body }} />
                 ) : (
-                  Details.body
+                  Properties.body
                 )}
-              </div>
-              <div className="modal-footer justify-content-center">
-                <span className="rank">{stars}</span>
+                {/* <div className="modal-footer">
+                  <span className="rank">{stars}</span>
+                </div> */}
               </div>
             </div>
           </div>
@@ -79,10 +80,10 @@ function Bubble(Details) {
 export default function SkillsGrid() {
   const rows = [];
 
-  for (let i = 0; i < Details.length; i += 3) {
+  for (let i = 0; i < Properties.length; i += 3) {
     const row = (
       <div className="row justify-content-center" key={i}>
-        {Details.slice(i, i + 3).map((skill) => (
+        {Properties.slice(i, i + 3).map((skill) => (
           <Bubble key={skill.id} {...skill} />
         ))}
       </div>

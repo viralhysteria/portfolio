@@ -13,5 +13,8 @@ module.exports = {
       config.resolve.alias['components'] = path.join(__dirname, 'src/components');
     }
     return config;
-  }
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles/scss')],
+  },
 };

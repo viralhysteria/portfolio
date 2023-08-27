@@ -2,26 +2,26 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { g } from "../utils/genGradient";
 import * as Content from "./dep/BubbleModalContent";
 
-const di = "devicon-";
+const di = "devicon";
 
 const Details = [
   {
     id: "html",
-    icon: `${di}html5-plain`,
+    icon: `${di}-html5-plain`,
     color: g.orange,
     title: "HTML",
     rank: 5,
   },
   {
     id: "css",
-    icon: `${di}css3-plain`,
+    icon: `${di}-css3-plain`,
     color: g.purple,
     title: "CSS",
     rank: 5,
   },
   {
     id: "design",
-    icon: `${di}photoshop-line`,
+    icon: `${di}-photoshop-line`,
     color: g.blue,
     title: "Graphic Design",
     body: <Content.DesignBody />,
@@ -37,7 +37,7 @@ const Details = [
   },
   {
     id: "win",
-    icon: `${di}windows8-original`,
+    icon: `${di}-windows8-original`,
     color: g.yellow,
     title: "Windows",
     body: <Content.WindowsBody />,
@@ -53,14 +53,14 @@ const Details = [
   },
   {
     id: "py",
-    icon: `${di}python-plain`,
+    icon: `${di}-python-plain`,
     color: g.green,
     title: "Python",
     rank: 3,
   },
   {
     id: "react",
-    icon: `${di}react-original`,
+    icon: `${di}-react-original`,
     color: g.cyan,
     title: "React",
     rank: 4,
@@ -119,21 +119,21 @@ const Details = [
   },
   {
     id: "deb",
-    icon: `${di}debian-plain`,
+    icon: `${di}-debian-plain`,
     color: g.red,
     title: "Linux (Debian)",
     rank: 4,
   },
   {
     id: "js",
-    icon: `${di}javascript-plain`,
+    icon: `${di}-javascript-plain`,
     color: g.yellow,
     title: "Javascript",
     rank: 3,
   },
   {
     id: "node",
-    icon: `${di}nodejs-plain`,
+    icon: `${di}-nodejs-plain`,
     color: g.green,
     title: "NodeJS",
     rank: 2,

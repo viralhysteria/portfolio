@@ -17,19 +17,15 @@ export function KaliBody() {
   }, [frameworkColors, commandlineColors]);
 
   return (
-    <div className="text-center">
-      <span className="fs-5 fw-bold text-decoration-underline">
-        Frameworks:
-      </span>
+    <>
+      <span className="fs-5 fw-bold">Frameworks</span>
       <KSMap items={kaliStack.framework} colors={frameworkColors} />
       <hr />
-      <span className="fs-5 fw-bold text-decoration-underline">
-        Commandline:
-      </span>
+      <span className="fs-5 fw-bold">Commandline</span>
       <KSMap items={kaliStack.commandline} colors={commandlineColors} />
       <hr />
       <a
-        className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-danger text-decoration-none"
+        className="fs-6 mx-2 mb-2 badge rounded text-bg-danger text-decoration-none"
         href="https://tryhackme.com/p/viralhysteria"
         target="_blank"
         rel="noopener noreferrer"
@@ -37,14 +33,14 @@ export function KaliBody() {
         TryHackMe
       </a>
       <a
-        className="fs-6 mx-2 mb-2 badge rounded-pill text-bg-success text-decoration-none"
+        className="fs-6 mx-2 mb-2 badge rounded text-bg-success text-decoration-none"
         href="https://app.hackthebox.com/users/1564442"
         target="_blank"
         rel="noopener noreferrer"
       >
         HackTheBox
       </a>
-    </div>
+    </>
   );
 }
 
@@ -133,13 +129,13 @@ export function WindowsBody() {
         <br />
         <br />
         Once I managed to get a slightly better PC, I started delving into
-        gaming and ended up with a virus called{" "}
-        <a href="https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Rogue:Wi FakeSmoke">
+        gaming and ended up with a virus called&apos;
+        <a href="https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Rogue:Win32/FakeSmoke&threatId=141916">
           WiniBlueSoft
-        </a>{" "}
-        from downloading a rogue torrent. This was the event that led me to st
-        digging more into the filesystem hierarchy in a drawn-out attempt to try
-        and &quot;fight off&quot; the virus.
+        </a>
+        &apos; from downloading a rogue torrent. This was the event that led me
+        to start digging more into the filesystem hierarchy in a drawn-out
+        attempt to try and &quot;fight off&quot; the virus.
         <br />
         <br />
         Whilst my attempts to thwart the virus were ultimately in vain, I
@@ -153,33 +149,36 @@ export function WindowsBody() {
 
 export function GamingBody() {
   return (
-    <>
-      <div class="container">
-        <Image
-          class="img-fluid"
-          width="400"
-          height="200"
-          src="/img/gaming_modal-steam_card.png"
-          alt=""
-        />
-        <Image
-          class="img-fluid"
-          width="400"
-          height="200"
-          src="/img/gaming_modal-psn_card.png"
-          alt=""
-        />
-      </div>
-    </>
+    <div className="container">
+      <Image
+        className="img-fluid"
+        width="400"
+        height="200"
+        src="/img/gaming_modal-steam_card.png"
+        alt=""
+      />
+      <Image
+        className="img-fluid"
+        width="400"
+        height="200"
+        src="/img/gaming_modal-psn_card.png"
+        alt=""
+      />
+    </div>
   );
 }
 
 export function StreamingBody() {
-  <p>
-    I&apos;m well acquainted with handling complex OBS scenes/setups to create
-    aesthetically pleasing yet confluent designs. Livestreaming has offered me a
-    great outlet for improving my ability to perform under pressure whether
-    through solo tasks or multitasking in front of random audiences as well as
-    aiding me in developing stronger social skills through viewer engagement.
-  </p>;
+  return (
+    <>
+      <p>
+        I&apos;m well acquainted with handling complex OBS scenes/setups to
+        create aesthetically pleasing yet confluent designs. Livestreaming has
+        offered me a great outlet for improving my ability to perform under
+        pressure whether through solo tasks or multitasking in front of random
+        audiences as well as aiding me in developing stronger social skills
+        through viewer engagement.
+      </p>
+    </>
+  );
 }

@@ -35,7 +35,7 @@ export default function QuickMenu() {
               <div className="modal-content">
                 <div className="modal-header justify-content-center">
                   <Image
-                    className="img-fluid w-75 nametag animate__animated animate__fadeIn animate__delay-1s"
+                    className="img-fluid w-100 nametag animate__animated animate__fadeIn animate__delay-1s"
                     src="/img/nametag.png"
                     alt=""
                     width="600"
