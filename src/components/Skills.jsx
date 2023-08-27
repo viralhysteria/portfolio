@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Properties from "./Bubble";
-import styles from "../styles/skills.module.css";
-import { randColor } from "../utils/randColor";
+import styles from "@/styles/skills.module.css";
+import { randColor } from "@/utils/randColor";
 
 function Bubble(Properties) {
   const [starColor, setStarColor] = useState([]);

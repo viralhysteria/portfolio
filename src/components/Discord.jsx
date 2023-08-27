@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import fetchChannels from "../utils/discordUtils";
-import styles from "../styles/discord.module.css";
+import fetchChannels from "@/utils/discordUtils";
+import styles from "@/styles/discord.module.css";
 
 export default function DiscordMarquee() {
   const [channels, setChannels] = useState([]);

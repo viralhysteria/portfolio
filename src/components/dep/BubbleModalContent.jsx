@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { randColor } from "../../utils/randColor";
+import { randColor } from "@/utils/randColor";
 import { kaliStack, KSMap } from "./KaliBadges";
 
 export function KaliBody() {

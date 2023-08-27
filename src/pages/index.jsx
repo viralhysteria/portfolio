@@ -1,7 +1,7 @@
 import Link from "next/link";
-import QuickMenu from "../components/Float";
-import SkillsGrid from "../components/Skills";
-import DiscordMarquee from "../components/Discord";
+import QuickMenu from "@/components/Float";
+import SkillsGrid from "@/components/Skills";
+import DiscordMarquee from "@/components/Discord";
 
 export default function Home() {
   return (
