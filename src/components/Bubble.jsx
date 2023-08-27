@@ -1,5 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { g } from "../utils/genGradient";
+import { gradient } from "../utils/genGradient";
 import * as Content from "./dep/BubbleModalContent";
 
 const di = "devicon";
@@ -8,21 +8,21 @@ const Details = [
   {
     id: "html",
     icon: `${di}-html5-plain`,
-    color: g.orange,
+    color: gradientorange,
     title: "HTML",
     rank: 5,
   },
   {
     id: "css",
     icon: `${di}-css3-plain`,
-    color: g.purple,
+    color: gradientpurple,
     title: "CSS",
     rank: 5,
   },
   {
     id: "design",
     icon: `${di}-photoshop-line`,
-    color: g.blue,
+    color: gradientblue,
     title: "Graphic Design",
     body: <Content.DesignBody />,
     rank: 3,
@@ -30,7 +30,7 @@ const Details = [
   {
     id: "trade",
     icon: "fas fa-magnifying-glass-chart",
-    color: g.red,
+    color: gradientred,
     title: "Technical Analysis + Swing Trading",
     body: <Content.TradingBody />,
     rank: 4,
@@ -38,7 +38,7 @@ const Details = [
   {
     id: "win",
     icon: `${di}-windows8-original`,
-    color: g.yellow,
+    color: gradientyellow,
     title: "Windows",
     body: <Content.WindowsBody />,
     rank: 5,
@@ -46,7 +46,7 @@ const Details = [
   {
     id: "oscp",
     icon: "fas fa-dragon",
-    color: g.cyan,
+    color: gradientcyan,
     title: "Pentesting w/Kali + Offensive Security",
     body: <Content.KaliBody />,
     rank: 4,
@@ -54,42 +54,42 @@ const Details = [
   {
     id: "py",
     icon: `${di}-python-plain`,
-    color: g.green,
+    color: gradientgreen,
     title: "Python",
     rank: 3,
   },
   {
     id: "react",
     icon: `${di}-react-original`,
-    color: g.cyan,
+    color: gradientcyan,
     title: "React",
     rank: 4,
   },
   {
     id: "btc",
     icon: "fab fa-bitcoin",
-    color: g.orange,
+    color: gradientorange,
     title: "Bitcoin",
     rank: 3,
   },
   {
     id: "eth",
     icon: "fab fa-ethereum",
-    color: g.gray,
+    color: gradientgray,
     title: "Ethereum",
     rank: 3,
   },
   {
     id: "daw",
     icon: "fas fa-pepper-hot",
-    color: g.orange,
+    color: gradientorange,
     title: "FL Studio",
     rank: 4,
   },
   {
     id: "vg",
     icon: "fas fa-gamepad",
-    color: g.pink,
+    color: gradientpink,
     title: "Competitive Gaming",
     body: <Content.GamingBody />,
     rank: 5,
@@ -97,7 +97,7 @@ const Details = [
   {
     id: "obs",
     icon: "fab fa-twitch",
-    color: g.purple,
+    color: gradientpurple,
     title: "Livestreaming",
     body: <Content.StreamingBody />,
     rank: 4,
@@ -105,14 +105,14 @@ const Details = [
   {
     id: "dav",
     icon: "fas fa-clapperboard",
-    color: g.blue,
+    color: gradientblue,
     title: "Video Production",
     rank: 3,
   },
   {
     id: "fit",
     icon: "fas fa-dumbbell",
-    color: g.gray,
+    color: gradientgray,
     title: "Nutrition/Fitness",
     body: ``,
     rank: 4,
@@ -120,21 +120,21 @@ const Details = [
   {
     id: "deb",
     icon: `${di}-debian-plain`,
-    color: g.red,
+    color: gradientred,
     title: "Linux (Debian)",
     rank: 4,
   },
   {
     id: "js",
     icon: `${di}-javascript-plain`,
-    color: g.yellow,
+    color: gradientyellow,
     title: "Javascript",
     rank: 3,
   },
   {
     id: "node",
     icon: `${di}-nodejs-plain`,
-    color: g.green,
+    color: gradientgreen,
     title: "NodeJS",
     rank: 2,
   },
