@@ -14,7 +14,7 @@ function genGradient(color1, color2) {
   return `linear-gradient(180deg, ${color1} 0%, ${color2} 100%)`;
 }
 
-export const g = gradients.reduce((acc, { name, colors }) => {
+export const gradient = gradients.reduce((acc, { name, colors }) => {
   acc[name] = genGradient(...colors);
   return acc;
 }, {});
