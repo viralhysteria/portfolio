@@ -1,5 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { gradient } from "../utils/genGradient";
+import { gradient } from "@/utils/genGradient";
 import * as Content from "./dep/BubbleModalContent";
 
 const di = "devicon";
