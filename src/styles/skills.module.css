@@ -17,8 +17,6 @@
     overflow: hidden;
     user-select: none;
     transition: width 1s ease;
-    width: 80px;
-    height: 80px;
 }
 
 .bubble i {
@@ -26,7 +24,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-size: 0.8rem;
 }
 
 .bubble:hover {
