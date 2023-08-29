@@ -8,9 +8,4 @@ const RootLayout = ({ children }) => {
   );
 };
 
-export const metadata = {
-  title: "viralhysteria",
-  description: "Portfolio",
-};
-
 export default RootLayout;
