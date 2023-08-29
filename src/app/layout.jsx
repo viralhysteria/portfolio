@@ -1,6 +1,6 @@
 import React from "react";
 
-const RootLayout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <html lang="en">
       <body data-bs-theme="auto">{children}</body>
@@ -8,4 +8,4 @@ const RootLayout = ({ children }) => {
   );
 };
 
-export default RootLayout;
+export default Layout;

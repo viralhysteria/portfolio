@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import {remark} from "remark";
 import html from "remark-html";
 import Layout from "@/app/layout";
+import { remark } from "remark";
 
 export default function BlogPost({ frontmatter, content }) {
   return (
