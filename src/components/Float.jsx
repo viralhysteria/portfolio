@@ -44,22 +44,28 @@ export default function QuickMenu() {
                 </div>
                 <div className="modal-body fw-normal rounded mx-3">
                   <p className="about-text fw-normal animate__animated animate__fadeIn">
-                    I am a passionate full-stack developer with over 15 years of
-                    experience in IT, using a wide variety of operating systems,
-                    front/back-end frameworks, programming languages, and
-                    software applications.
+                    I am a dedicated full-stack developer with over 15 years of
+                    experience in the IT industry. Throughout my life, I have
+                    worked with various operating systems, front-end and
+                    back-end frameworks, programming languages, and software
+                    applications. My passion for technology drives me to stay
+                    updated with the latest advancements in the field.
                     <br />
                     <br />
-                    Outside of work, I pursue a variety of intellectual
-                    interests, especially in the realms of pharmacology,
-                    neuroscience, and finance. I am particularly well-versed in
-                    the realm of cannabinoids as well as serotonin subtype
-                    agonists, but I don&apos;t limit my scope of interest to
-                    them specifically.
+                    Beyond my professional life, I have a keen interest in
+                    intellectual pursuits, particularly in the fields of
+                    pharmacology, neuroscience, and finance. My knowledge
+                    extends to cannabinoids, serotonin subtype agonists, and
+                    other related subjects. However, my curiosity extends beyond
+                    these topics as I constantly seek to expand my horizons.
                     <br />
-                    <br />I also apply a systematic approach to analyzing
-                    broader markets through fundamentals and technicals as an
-                    approach to swing trading cryptocurrencies.
+                    <br />
+                    Additionally, I adopt a systematic approach to analyze and
+                    understand broader markets. Applying both fundamental and
+                    technical analysis, I engage in swing trading
+                    cryptocurrencies. This multidisciplinary approach allows me
+                    to combine my passion for technology with my interest in
+                    finance.
                   </p>
                 </div>
                 <div className="modal-footer d-flex justify-content-end animate__animated animate__fadeIn animate__delay-1s">
