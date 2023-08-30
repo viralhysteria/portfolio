@@ -39,8 +39,17 @@ if (typeof window !== "undefined") {
     const nav = document.querySelector(".nav");
     const skills = document.querySelector("[class^='skills']");
     const nametag = document.querySelector(".nametag");
-    removeClassesOnAnimationEnd(nav, ["animated", "animate__fadeInDownBig"]);
-    removeClassesOnAnimationEnd(skills, ["animated", "animate__fadeInUpBig"]);
-    removeClassesOnAnimationEnd(nametag, ["animated", "animate__zoomIn"]);
+
+    if (nav) {
+      removeClassesOnAnimationEnd(nav, ["animated", "animate__fadeInDownBig"]);
+    }
+
+    if (skills) {
+      removeClassesOnAnimationEnd(skills, ["animated", "animate__fadeInUpBig"]);
+    }
+
+    if (nametag) {
+      removeClassesOnAnimationEnd(nametag, ["animated", "animate__zoomIn"]);
+    }
   });
 }
