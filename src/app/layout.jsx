@@ -1,10 +1,14 @@
-import React from "react";
+import QuickMenu from "@/components/Float";
 
 const Layout = ({ children }) => {
   return (
-    <html lang="en">
-      <body data-bs-theme="auto">{children}</body>
-    </html>
+    <>
+      <div className="pattern"></div>
+      <div className="d-flex" id="Header">
+        <QuickMenu />
+      </div>
+      {children}
+    </>
   );
 };
 
