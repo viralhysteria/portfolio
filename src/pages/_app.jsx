@@ -1,12 +1,13 @@
 import Head from "next/head";
-import Layout from "@/app/layout";
+import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import "animate.css";
 import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import "../styles/global.css";
-import "../styles/scss/main.scss";
-import "../script";
+import "@/styles/global.css";
+import "@/styles/scss/main.scss";
+import "@/utils/themeSwitch";
+import "@/utils/helper/hoverCssFix";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
