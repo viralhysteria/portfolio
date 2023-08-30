@@ -23,6 +23,7 @@
     "paths": {
       "@/app/*": ["app/*"],
       "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"]
     }
@@ -33,6 +34,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "build/types/**/*.ts"
-, "src/app/layout.jsx"  ],
+, "src/components/Layout.jsx"  ],
   "exclude": ["node_modules"]
 }
