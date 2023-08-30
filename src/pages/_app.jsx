@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
 import "@/utils/themeSwitch";
-import "@/utils/helper/hoverCssFix";
+import "@/utils/helper/animateCssFix";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
