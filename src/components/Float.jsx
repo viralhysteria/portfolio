@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
@@ -7,38 +8,82 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBook,
+  faHome,
+  faMoon,
+  faCircleUser,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function QuickMenu() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      body.dataset.bsTheme = storedTheme;
+      setTheme(storedTheme);
+    } else {
+      localStorage.setItem("theme", theme);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const body = document.querySelector("body");
+    const newTheme = theme === "light" ? "dark" : "light";
+    body.dataset.bsTheme = newTheme;
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
   return (
     <header className="m-auto">
+      <style jsx>{`
+        a {
+          color: red;
+        }
+      `}</style>
       <div style={{ pointerEvents: "auto" }}>
         <ul className="nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center animate__animated animate__slower animate__fadeInDownBig">
+          <li className="nav-link px-2 select">
+            <Link href="/">
+              <FontAwesomeIcon icon={faHome} fixedWidth />
+            </Link>
+          </li>
+          <li className="nav-link px-2 select">
+            <FontAwesomeIcon
+              icon={faCircleUser}
+              style={{ userSelect: "none" }}
+              data-bs-toggle="modal"
+              data-bs-target="#bioModal"
+              fixedWidth
+            />
+          </li>
+          <li className="nav-link px-2 select">
+            <Link href="/blog">
+              <FontAwesomeIcon icon={faBook} fixedWidth />
+            </Link>
+          </li>
           <li className="nav-link px-2 select animate__animated animate__bounce animate__slow">
-            <input type="checkbox" id="toggle" className="theme-toggle" />
+            <input
+              type="checkbox"
+              id="toggle"
+              className="theme-toggle"
+              checked={theme === "dark"}
+              onChange={toggleTheme}
+            />
             <label
               htmlFor="toggle"
               className="theme-label"
               style={{ userSelect: "none" }}
             >
-              <i className="fa-solid fa-sun"></i>
-            </label>
-          </li>
-          <li className="nav-item px-2 select">
-            <i
-              className="nav-link fa-sharp fa-solid fa-circle-user"
-              style={{ userSelect: "none"}}
-              data-bs-toggle="modal"
-              data-bs-target="#bioModal"
-            ></i>
-          </li>
-          <li className="nav-item px-2 select">
-            <Link href="/blog">
               <FontAwesomeIcon
-                icon={faBook}
+                icon={theme === "dark" ? faSun : faMoon}
                 fixedWidth
+                key={theme}
               />
-            </Link>
+            </label>
           </li>
           <div id="bioModal" className="modal fade" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
