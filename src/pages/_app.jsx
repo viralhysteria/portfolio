@@ -6,8 +6,8 @@ import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
-import "@/utils/themeSwitch";
 import "@/utils/helper/animateCssFix";
+import "@/utils/themeSwitch";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {

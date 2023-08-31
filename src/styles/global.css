@@ -61,8 +61,6 @@
     color: var(--bs-body-bg);
 }
 
-header i::before,
-[class*="theme-label"] i::before,
 [class*="icons"] i::before {
     font-size: 2em;
     transition: color 1s ease;

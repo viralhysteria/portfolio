@@ -19,7 +19,6 @@ function Bubble(Properties) {
   });
 
   useEffect(() => {
-    import("bootstrap/js/src/modal");
     const colors = Array.from({ length: Properties.rank }, () => randColor());
     setStarColor(colors);
   }, [Properties.rank]);

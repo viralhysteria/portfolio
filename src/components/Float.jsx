@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
@@ -6,6 +7,7 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 export default function QuickMenu() {
   return (
@@ -25,10 +27,18 @@ export default function QuickMenu() {
           <li className="nav-item px-2 select">
             <i
               className="nav-link fa-sharp fa-solid fa-circle-user"
-              style={{ userSelect: "none" }}
+              style={{ userSelect: "none"}}
               data-bs-toggle="modal"
               data-bs-target="#bioModal"
             ></i>
+          </li>
+          <li className="nav-item px-2 select">
+            <Link href="/blog">
+              <FontAwesomeIcon
+                icon={faBook}
+                fixedWidth
+              />
+            </Link>
           </li>
           <div id="bioModal" className="modal fade" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">

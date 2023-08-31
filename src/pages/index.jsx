@@ -1,5 +1,3 @@
-import Link from "next/link";
-import QuickMenu from "@/components/Float";
 import SkillsGrid from "@/components/Skills";
 import DiscordMarquee from "@/components/Discord";
 
