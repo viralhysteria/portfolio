@@ -70,7 +70,8 @@ export async function getStaticPaths() {
   const postFilePaths = await fs.readdir(postsDir);
 
   const paths = postFilePaths
-    .map((filename) => filename.replace(/\.mdx?$/, ""))
+    .filter((filename) => !filename.endsWith('.jsx'))
+    .map((filename) => filename.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }));
 
   return {
