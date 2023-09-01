@@ -1,8 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { gradient } from "@/utils/genGradient";
-import * as Content from "./include/BubbleModal";
+import * as Content from "./BubbleModal";
 
 const di = "devicon";
+const fs = "fas fa";
+const fb = "fab fa";
 
 const Details = [
   {
@@ -29,7 +31,7 @@ const Details = [
   },
   {
     id: "trade",
-    icon: "fas fa-magnifying-glass-chart",
+    icon: `${fs}-magnifying-glass-chart`,
     color: gradient.red,
     title: "Technical Analysis + Swing Trading",
     body: <Content.TradingBody />,
@@ -45,7 +47,7 @@ const Details = [
   },
   {
     id: "oscp",
-    icon: "fas fa-dragon",
+    icon: `${fs}-dragon`,
     color: gradient.cyan,
     title: "Pentesting w/Kali + Offensive Security",
     body: <Content.KaliBody />,
@@ -74,21 +76,21 @@ const Details = [
   },
   {
     id: "eth",
-    icon: "fab fa-ethereum",
+    icon: `${fb}-ethereum`,
     color: gradient.gray,
     title: "Ethereum",
     rank: 3,
   },
   {
     id: "daw",
-    icon: "fas fa-pepper-hot",
+    icon: `${fs}-pepper-hot`,
     color: gradient.orange,
     title: "FL Studio",
     rank: 4,
   },
   {
     id: "vg",
-    icon: "fas fa-gamepad",
+    icon: `${fs}-gamepad`,
     color: gradient.pink,
     title: "Competitive Gaming",
     body: <Content.GamingBody />,
@@ -96,7 +98,7 @@ const Details = [
   },
   {
     id: "obs",
-    icon: "fab fa-twitch",
+    icon: `${fb}-twitch`,
     color: gradient.purple,
     title: "Livestreaming",
     body: <Content.StreamingBody />,
@@ -104,14 +106,14 @@ const Details = [
   },
   {
     id: "dav",
-    icon: "fas fa-clapperboard",
+    icon: `${fs}-clapperboard`,
     color: gradient.blue,
     title: "Video Production",
     rank: 3,
   },
   {
     id: "fit",
-    icon: "fas fa-dumbbell",
+    icon: `${fs}-dumbbell`,
     color: gradient.gray,
     title: "Nutrition/Fitness",
     body: ``,

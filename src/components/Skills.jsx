@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Properties from "./Bubble";
+import Properties from "./include/Bubble";
 import styles from "@/styles/skills.module.css";
 import { randColor } from "@/utils/randColor";
 
@@ -149,9 +149,9 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="d-flex m-auto">
+    <main className="position-relative overflow- h-100" style={{top: "12vh"}}>
       <div
-        className={`${styles.skills} flex-grow-1 animate__animated animate__fadeInUpBig animate__slow`}
+        className={`${styles.skills} d-flex justify-content-center flex-grow-1 animate__animated animate__fadeIn animate__slower animate__delay-1s`}
       >
         <div className={`${styles.icons}`}>{rows}</div>
       </div>
