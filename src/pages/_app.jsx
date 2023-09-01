@@ -6,7 +6,7 @@ import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
-import { FixAnimateCssClasses } from "../utils/helper/animateCssFix";
+import { FixAnimateCssClasses } from "../utils/animateCssFix";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
