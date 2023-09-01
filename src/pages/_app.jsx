@@ -6,12 +6,14 @@ import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
-import "@/utils/helper/animateCssFix";
+import { FixAnimateCssClasses } from "../utils/helper/animateCssFix";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     import("bootstrap/js/src/modal");
-  });
+  }, []);
+
+  FixAnimateCssClasses();
 
   return (
     <Layout>

@@ -1,25 +1,80 @@
-if (typeof window !== "undefined") {
-  window.addEventListener("load", function () {
-    function removeClassesOnAnimationEnd(element, classesToRemove) {
-      element.addEventListener("animationend", function () {
-        element.classList.remove(...classesToRemove);
+// this is still fairly hacky and will eventually
+// either be re-written again or deprecated in favor
+// of a bootstrap friendly animation library
+
+import { useEffect } from "react";
+
+export function FixAnimateCssClasses() {
+  const aCssPrefix = "animate__";
+
+  const handleShowModal = (el) => {
+    const classList = el.classList;
+    Array.from(classList).forEach((className) => {
+      if (className.includes(aCssPrefix)) {
+        const regex = new RegExp(`${aCssPrefix}\\S+`);
+        if (className.match(regex)) {
+          el.addEventListener(
+            "animationend",
+            () => {
+              classList.remove(className);
+            },
+            { once: true }
+          );
+        }
+      }
+    });
+  };
+
+  const handleHideModal = (el) => {
+    const classList = el.classList;
+    Array.from(classList).forEach((className) => {
+      if (className.includes(aCssPrefix)) {
+        const regex = new RegExp(`${aCssPrefix}\\S+`);
+        if (!className.match(regex)) {
+          el.addEventListener(
+            "animationend",
+            () => {
+              classList.add(className);
+            },
+            { once: true }
+          );
+        }
+      }
+    });
+  };
+
+  const attachEventListeners = (elements) => {
+    elements.forEach((el) => {
+      const classList = el.classList;
+      Array.from(classList).forEach((className) => {
+        if (className.includes(aCssPrefix)) {
+          el.addEventListener("show.bs.modal", () => handleShowModal(el));
+          el.addEventListener("hide.bs.modal", () => handleHideModal(el));
+        }
       });
-    }
+    });
+  };
 
-    const nav = document.querySelector(".nav");
-    const skills = document.querySelector("[class^='skills']");
-    const nametag = document.querySelector(".nametag");
+  useEffect(() => {
+    const elements = document.querySelectorAll("[class*='animate__']");
+    attachEventListeners(elements);
 
-    if (nav) {
-      removeClassesOnAnimationEnd(nav, ["animated", "animate__fadeInDownBig"]);
-    }
+    const handlePopstate = () => {
+      const updatedElements = document.querySelectorAll("[class*='animate__']");
+      attachEventListeners(updatedElements);
+    };
 
-    if (skills) {
-      removeClassesOnAnimationEnd(skills, ["animated", "animate__fadeInUpBig"]);
-    }
+    window.addEventListener("popstate", handlePopstate);
 
-    if (nametag) {
-      removeClassesOnAnimationEnd(nametag, ["animated", "animate__zoomIn"]);
-    }
+    return () => {
+      elements.forEach((el) => {
+        el.removeEventListener("show.bs.modal", handleShowModal);
+        el.removeEventListener("hide.bs.modal", handleHideModal);
+      });
+
+      window.removeEventListener("popstate", handlePopstate);
+    };
   });
+
+  return null;
 }
