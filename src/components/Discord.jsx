@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchChannels from "@/utils/discordUtils";
-import styles from "@/styles/discord.module.css";
+import styles from "@/styles/scss/discord.module.scss";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/animations";
 
