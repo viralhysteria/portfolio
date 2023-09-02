@@ -154,14 +154,14 @@ export function GamingBody() {
         className="img-fluid"
         width="400"
         height="200"
-        src="/img/gaming_modal-steam_card.png"
+        src="/img/steam_card.png"
         alt=""
       />
       <Image
         className="img-fluid"
         width="400"
         height="200"
-        src="/img/gaming_modal-psn_card.png"
+        src="/img/psn_card.png"
         alt=""
       />
     </div>

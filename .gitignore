@@ -33,6 +33,7 @@ yarn-error.log*
 next-env.d.ts
 
 # blog posts
+/public/img/blog/*
 /src/pages/blog/posts/*
 !/src/pages/blog/posts/[slug].jsx
 
