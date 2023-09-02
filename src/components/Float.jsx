@@ -26,7 +26,7 @@ import {
 
 export default function QuickMenu() {
   const [theme, setTheme] = useState("light");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -51,6 +51,14 @@ export default function QuickMenu() {
     localStorage.setItem("theme", newTheme);
   };
 
+  // const handleOpenModal = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
+  
   return (
     <motion.header
       className="m-auto"
@@ -79,7 +87,7 @@ export default function QuickMenu() {
               style={{ userSelect: "none" }}
               data-bs-toggle="modal"
               data-bs-target="#bioModal"
-              onClick={handleOpenModal}
+              // onClick={handleOpenModal}
             />
           </li>
           <li className="nav-link px-2 select">
