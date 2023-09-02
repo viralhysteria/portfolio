@@ -18,10 +18,6 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 75%);
 }
 
-.scroll:hover {
-  cursor: pointer;
-}
-
 .scroll ul {
   list-style: none;
   flex-shrink: 0;
@@ -46,7 +42,8 @@
 }
 
 .scroll ul li:hover {
-  text-decoration: underline;
+  cursor: pointer;
+  background: var(--bs-secondary-bg);
 }
 
 .scroll--reverse .scroll ul {

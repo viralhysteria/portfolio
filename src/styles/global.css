@@ -1,30 +1,8 @@
-:root {
-    --fs-7: 0.75rem;
-    --fs-8: 0.5rem;
-    --fade-animate-duration: 1.2s;
-    --light: #f7f7f7;
-}
-
-.animate__animated.animate__fadeInUpBig,
-.animate__animated.animate__fadeInDownBig {
-    --animate-duration: var(--fade-animate-duration);
-}
-
-:root,
-[data-bs-theme=light] {
-    --bs-body-bg: var(--light) !important;
-    --bs-secondary-bg: #eeeeee !important;
-    --bs-body-color: #0D1017 !important;
-    --bubble-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-    --modal-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
-}
 
 [data-bs-theme=dark] {
     --bs-body-bg: #0D1017 !important;
     --bs-secondary-bg: #171c29 !important;
-    --bs-body-color: var(--light) !important;
-    --bubble-shadow: none;
-    --modal-shadow: none;
+    --bs-body-color: #f7f7f7 !important;
 }
 
 /* ===================== */
@@ -57,27 +35,12 @@
 
 /* ===================== */
 
-[class*="icons"] i::before {
-    color: var(--bs-body-bg);
-}
-
-[class*="icons"] i::before {
-    font-size: 2em;
-    transition: color 1s ease;
-}
-
 body {
     transition: background-color 1s ease;
 }
 
-header i::before,
-[class*="theme-label"] i::before {
-    color: invert(var(--bs-body-bg));
-}
-
 header li span {
     font-size: 1.5em;
-    transition: color 1s ease-in-out;
 }
 
 footer {
@@ -91,6 +54,17 @@ footer ul {
 
 /* ===================== */
 
+[class*="icons"] i::before {
+    color: var(--bs-body-bg);
+}
+
+[class*="icons"] i::before {
+    font-size: 2em;
+    transition: color 1s ease;
+}
+
+/* ===================== */
+
 .pattern {
     opacity: 0.1;
     background: var(--bs-body-bg);
@@ -99,16 +73,6 @@ footer ul {
 }
 
 .select {
-    cursor: pointer;
-}
-
-.theme-toggle {
-    top: 0;
-    display: none;
-}
-
-.theme-label {
-    display: inline-block;
     cursor: pointer;
 }
 
@@ -128,22 +92,6 @@ footer ul {
 
 [class*="social-"] svg:hover {
     transition: color 0.3s ease-in-out;
-}
-
-.social-discord svg:hover {
-    color: hsl(232, 90%, 64%)
-}
-
-.social-twitter svg:hover {
-    color: hsl(201, 100%, 48%)
-}
-
-.social-github svg:hover {
-    color: hsl(11, 40%, 47%)
-}
-
-.social-twitch svg:hover {
-    color: hsl(265, 99%, 63%)
 }
 
 /* ===================== */

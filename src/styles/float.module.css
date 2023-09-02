@@ -1,0 +1,43 @@
+.nav:hover {
+  background: var(--bs-secondary-bg);
+  transition: background 0.3s ease;
+}
+
+.nav:not(:hover) {
+  transition: background 0.3s ease;
+}
+
+.nav-icon {
+  width: 1.5rem;
+  color: var(--bs-body-color);
+}
+
+.nav-icon:hover {
+  color: var(--bs-secondary);
+}
+
+.theme-toggle {
+  top: 0;
+  display: none;
+}
+
+.theme-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.social-discord svg:hover {
+  color: hsl(232, 90%, 64%)
+}
+
+.social-twitter svg:hover {
+  color: hsl(201, 100%, 48%)
+}
+
+.social-github svg:hover {
+  color: hsl(11, 40%, 47%)
+}
+
+.social-twitch svg:hover {
+  color: hsl(265, 99%, 63%)
+}

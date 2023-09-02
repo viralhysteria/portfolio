@@ -17,7 +17,7 @@
 }
 
 .modal-dialog {
-  width: 80vh;
+  max-width: 80vw;
 }
 
 .modal-content {
@@ -37,13 +37,13 @@
   padding: 2px 0;
   text-align: left;
   text-transform: uppercase;
-  border-bottom: 5px solid var(--light);
+  border-bottom: 5px solid var(--bs-gray-100);
   white-space: normal;
   line-height: 4rem;
 }
 
 .modal-body {
-  color: var(--light);
+  color: var(--bs-gray-100);
   background: transparent;
   padding: 1.5em 1.5em;
 }
@@ -66,7 +66,7 @@
 }
 
 .modal-footer a svg {
-  color: #f7f7f7;
+  color: var(--bs-gray-100);
   text-decoration: none;
   font-size: 1.5rem;
 }

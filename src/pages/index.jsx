@@ -4,7 +4,7 @@ import DiscordMarquee from "@/components/Discord";
 export default function Home() {
   return (
     <>
-      <div className="d-flex" id="Content" style={{ minHeight: "100vh" }}>
+      <div id="Content">
         <SkillsGrid />
         <DiscordMarquee />
       </div>
