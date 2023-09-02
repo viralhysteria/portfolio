@@ -1,19 +1,15 @@
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import "animate.css";
 import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
-import { FixAnimateCssClasses } from "@/utils/animateCssFix";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     import("bootstrap/js/src/modal");
   }, []);
-
-  FixAnimateCssClasses();
 
   return (
     <Layout>

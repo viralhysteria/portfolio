@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
@@ -9,15 +10,25 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faBook,
   faHome,
-  faMoon,
   faCircleUser,
+  faNewspaper,
   faSun,
+  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import styles from "@/styles/float.module.css";
+import {
+  fadeIn,
+  bounceInDown,
+  slideInFromLeft,
+  zoomIn,
+} from "@/utils/animations";
 
 export default function QuickMenu() {
   const [theme, setTheme] = useState("light");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
     const body = document.querySelector("body");
@@ -28,7 +39,9 @@ export default function QuickMenu() {
     } else {
       localStorage.setItem("theme", theme);
     }
-  }, []);
+  }, [theme]);
+
+  useEffect(() => {}, [isInView]);
 
   const toggleTheme = () => {
     const body = document.querySelector("body");
@@ -37,68 +50,101 @@ export default function QuickMenu() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
+
   return (
-    <header className="m-auto">
-      <style jsx>{`
-        a {
-          color: red;
-        }
-      `}</style>
+    <motion.header
+      className="m-auto"
+      initial="0"
+      animate="1"
+      variants={slideInFromLeft}
+      transition={{
+        delay: 1,
+        duration: 3,
+        ease: "easeInOut",
+      }}
+    >
       <div style={{ pointerEvents: "auto" }}>
-        <ul className="nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center animate__animated animate__slower animate__fadeInDownBig">
+        <ul
+          className={`${styles.nav} nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center`}
+        >
           <li className="nav-link px-2 select">
             <Link href="/">
-              <FontAwesomeIcon icon={faHome} fixedWidth />
+              <FontAwesomeIcon icon={faHome} className={styles["nav-icon"]} />
             </Link>
           </li>
           <li className="nav-link px-2 select">
             <FontAwesomeIcon
               icon={faCircleUser}
+              className={styles["nav-icon"]}
               style={{ userSelect: "none" }}
               data-bs-toggle="modal"
               data-bs-target="#bioModal"
-              fixedWidth
+              onClick={handleOpenModal}
             />
           </li>
           <li className="nav-link px-2 select">
             <Link href="/blog">
-              <FontAwesomeIcon icon={faBook} fixedWidth />
+              <FontAwesomeIcon
+                icon={faNewspaper}
+                className={styles["nav-icon"]}
+              />
             </Link>
           </li>
-          <li className="nav-link px-2 select animate__animated animate__bounce animate__slow">
+          <motion.li
+            className="nav-link px-2 select"
+            initial=""
+            animate=""
+            variants=""
+            transition={{
+              delay: 4,
+              duration: 1,
+              ease: "easeOut",
+            }}
+            ref={ref}
+          >
             <input
               type="checkbox"
               id="toggle"
-              className="theme-toggle"
+              className={styles["theme-toggle"]}
               checked={theme === "dark"}
               onChange={toggleTheme}
             />
             <label
               htmlFor="toggle"
-              className="theme-label"
+              className={styles["theme-label"]}
               style={{ userSelect: "none" }}
             >
               <FontAwesomeIcon
-                icon={theme === "dark" ? faSun : faMoon}
-                fixedWidth
-                key={theme}
+                icon={theme === "dark" ? faSun : faCircle}
+                className={styles["nav-icon"]}
               />
             </label>
-          </li>
+          </motion.li>
+
           <div id="bioModal" className="modal fade" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div className="modal-content">
-                <div className="modal-header justify-content-center">
+                <motion.div
+                  className="modal-header justify-content-center"
+                  initial="0"
+                  animate="1"
+                  variants={zoomIn}
+                  transition={{
+                    delay: 5,
+                    duration: 2,
+                    ease: "easeInOut",
+                  }}
+                >
                   <Image
-                    className="img-fluid w-100 nametag animate__animated animate__fadeIn animate__delay-1s"
+                    className="img-fluid w-100 nametag"
                     src="/img/nametag.png"
                     alt=""
                     width="600"
                     height="120"
                   />
-                </div>
+                </motion.div>
                 <div className="modal-body fw-normal rounded mx-3">
-                  <p className="about-text fw-normal animate__animated animate__fadeIn">
+                  <p className="about-text">
                     I am a dedicated full-stack developer with over 15 years of
                     experience in the IT industry. Throughout my life, I have
                     worked with various operating systems, front-end and
@@ -123,7 +169,18 @@ export default function QuickMenu() {
                     finance.
                   </p>
                 </div>
-                <div className="modal-footer d-flex justify-content-end animate__animated animate__fadeIn animate__delay-1s">
+                <motion.div
+                  className="modal-footer d-flex justify-content-end"
+                  initial="0"
+                  animate="1"
+                  variants={fadeIn}
+                  transition={{
+                    delay: 1,
+                    duration: 3,
+                    ease: "easeInOut",
+                  }}
+                  ref={ref}
+                >
                   <ul className="nav">
                     <a
                       className="nav-link social-discord"
@@ -150,12 +207,12 @@ export default function QuickMenu() {
                       <FontAwesomeIcon icon={faTwitch} fixedWidth />
                     </a>
                   </ul>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </ul>
       </div>
-    </header>
+    </motion.header>
   );
 }

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import fetchChannels from "@/utils/discordUtils";
 import styles from "@/styles/discord.module.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/animations";
+
+const guild = process.env.discord_guild_id;
 
 export default function DiscordMarquee() {
   const [channels, setChannels] = useState([]);
@@ -18,13 +22,23 @@ export default function DiscordMarquee() {
   }
 
   return (
-    <div className="fixed-bottom" onClick={inviteTrigger}>
+    <motion.div
+      className="fixed-bottom"
+      onClick={inviteTrigger}
+      initial="0"
+      animate="1"
+      variants={fadeIn}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+      }}
+    >
       <div className={styles.scroll}>
         <ul>{channelMap()}</ul>
         <ul aria-hidden="true" className={styles.scrollLoop}>
           {channelMap()}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }

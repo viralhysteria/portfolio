@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Properties from "./include/Bubble";
 import styles from "@/styles/skills.module.css";
 import { randColor } from "@/utils/randColor";
+import { motion } from "framer-motion";
+import { slideInFromTop } from "@/utils/animations";
 
 function Bubble(Properties) {
   const [bubbleStyle, setBubbleStyle] = useState({});
@@ -149,12 +151,20 @@ export default function SkillsGrid() {
   }
 
   return (
-    <main className="position-relative overflow- h-100" style={{top: "12vh"}}>
-      <div
-        className={`${styles.skills} d-flex justify-content-center flex-grow-1 animate__animated animate__fadeIn animate__slower animate__delay-1s`}
-      >
+    <motion.main
+      className="position-relative overflow-visible h-100"
+      style={{ top: "12vh" }}
+      initial="0"
+      animate="1"
+      variants={slideInFromTop}
+      transition={{
+        duration: 3,
+        ease: "easeInOut",
+      }}
+    >
+      <div className={`${styles.skills} d-flex justify-content-center`}>
         <div className={`${styles.icons}`}>{rows}</div>
       </div>
-    </main>
+    </motion.main>
   );
 }
