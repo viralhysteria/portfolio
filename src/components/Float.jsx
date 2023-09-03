@@ -16,13 +16,13 @@ import {
   faSun,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/styles/float.module.css";
 import {
   fadeIn,
   bounceInDown,
   slideInFromLeft,
   zoomIn,
 } from "@/utils/animations";
+import styles from "@/styles/float.module.css";
 
 export default function QuickMenu() {
   const [theme, setTheme] = useState("light");
@@ -61,7 +61,7 @@ export default function QuickMenu() {
 
   return (
     <motion.header
-      className="m-auto"
+      className={`${styles.header} m-auto`}
       initial="0"
       animate="1"
       variants={slideInFromLeft}
@@ -72,14 +72,16 @@ export default function QuickMenu() {
       }}
     >
       <ul
-          className={`${styles.nav} nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center`}
+        className={
+          "nav navbar-expand-md fw-bold py-2 px-2 rounded-4 justify-content-around align-items-center"
+        }
       >
-          <li className="nav-link px-2 select">
+        <li className="nav-link select">
           <Link href="/">
             <FontAwesomeIcon icon={faHome} className={styles["nav-icon"]} />
           </Link>
         </li>
-          <li className="nav-link px-2 select">
+        <li className="nav-link select">
           <FontAwesomeIcon
             icon={faCircleUser}
             className={styles["nav-icon"]}
@@ -89,7 +91,7 @@ export default function QuickMenu() {
             // onClick={handleOpenModal}
           />
         </li>
-          <li className="nav-link px-2 select">
+        <li className="nav-link select">
           <Link href="/blog">
             <FontAwesomeIcon
               icon={faNewspaper}
@@ -98,7 +100,7 @@ export default function QuickMenu() {
           </Link>
         </li>
         <motion.li
-            className="nav-link px-2 select"
+          className="nav-link select"
           initial=""
           animate=""
           variants=""
@@ -128,7 +130,11 @@ export default function QuickMenu() {
           </label>
         </motion.li>
 
-        <div id="bioModal" className="modal fade" aria-hidden="true">
+        <div
+          id="bioModal"
+          className={`${styles.bioModal} modal fade`}
+          aria-hidden="true"
+        >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div className="modal-content">
               <motion.div
@@ -154,26 +160,25 @@ export default function QuickMenu() {
                 <p className="about-text">
                   I am a dedicated full-stack developer with over 15 years of
                   experience in the IT industry. Throughout my life, I have
-                    worked with various operating systems, front-end and
-                    back-end frameworks, programming languages, and software
-                    applications. My passion for technology drives me to stay
-                    updated with the latest advancements in the field.
+                  worked with various operating systems, front-end and back-end
+                  frameworks, programming languages, and software applications.
+                  My passion for technology drives me to stay updated with the
+                  latest advancements in the field.
                   <br />
                   <br />
                   Beyond my professional life, I have a keen interest in
                   intellectual pursuits, particularly in the fields of
-                    pharmacology, neuroscience, and finance. My knowledge
-                    extends to cannabinoids, serotonin subtype agonists, and
-                    other related subjects. However, my curiosity extends beyond
-                    these topics as I constantly seek to expand my horizons.
+                  pharmacology, neuroscience, and finance. My knowledge extends
+                  to cannabinoids, serotonin subtype agonists, and other related
+                  subjects. However, my curiosity extends beyond these topics as
+                  I constantly seek to expand my horizons.
                   <br />
                   <br />
                   Additionally, I adopt a systematic approach to analyze and
                   understand broader markets. Applying both fundamental and
                   technical analysis, I engage in swing trading
-                    cryptocurrencies. This multidisciplinary approach allows me
-                    to combine my passion for technology with my interest in
-                    finance.
+                  cryptocurrencies. This multidisciplinary approach allows me to
+                  combine my passion for technology with my interest in finance.
                 </p>
               </div>
               <motion.div

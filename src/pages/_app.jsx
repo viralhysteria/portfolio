@@ -25,10 +25,10 @@ export default function App({ Component, pageProps }) {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <div className="pattern position-absolute top-0 start-0 w-100 h-100"></div>
-      <Component {...pageProps} />
       <div className="d-flex">
         <QuickMenu />
       </div>
+      <Component {...pageProps} />
     </Layout>
   );
 }
