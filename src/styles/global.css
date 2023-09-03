@@ -1,7 +1,7 @@
 
 [data-bs-theme=dark] {
-    --bs-body-bg: #0D1017 !important;
-    --bs-secondary-bg: #171c29 !important;
+    --bs-body-bg: #000011 !important;
+    --bs-secondary-bg: #1d1d69 !important;
     --bs-body-color: #f7f7f7 !important;
 }
 
@@ -63,6 +63,10 @@ footer ul {
     transition: color 1s ease;
 }
 
+[class*="social-"] svg:hover {
+    transition: color 0.3s ease-in-out;
+}
+
 /* ===================== */
 
 .pattern {
@@ -74,38 +78,4 @@ footer ul {
 
 .select {
     cursor: pointer;
-}
-
-.nav-link {
-    padding: 0.2rem !important;
-    color: var(--bs-body-color) !important;
-}
-
-.breadcrumb {
-    display: flex;
-    justify-content: center;
-}
-
-.breadcrumb-item+.breadcrumb-item:before {
-    padding-right: 0.4rem !important;
-}
-
-[class*="social-"] svg:hover {
-    transition: color 0.3s ease-in-out;
-}
-
-/* ===================== */
-
-#Header {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-#bioModal div>div>.modal-footer img {
-    right: 10px;
-}
-
-#bioModal div>div>.modal-footer>ul a {
-    padding: 0 5px !important;
 }

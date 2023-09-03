@@ -1,19 +1,36 @@
-.nav:hover {
-  background: var(--bs-secondary-bg);
-  transition: background 0.3s ease;
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
-.nav:not(:hover) {
-  transition: background 0.3s ease;
+.nav-link {
+  background: var(--bs-secondary-bg);
 }
 
 .nav-icon {
-  width: 1.5rem;
+  width: 2.5rem;
   color: var(--bs-body-color);
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .nav-icon:hover {
-  color: var(--bs-secondary);
+  background: var(--bs-secondary-bg);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-icon:not(:hover):not(:active) {
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+
+.bioModal div>div>.modal-footer img {
+  right: 10px;
+}
+
+.bioModal div>div>.modal-footer>ul a {
+  padding: 0 5px !important;
 }
 
 .theme-toggle {

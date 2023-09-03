@@ -3,3 +3,17 @@ $enable-dark-mode: true;
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
 @import "modal";
+
+.nav-link {
+  color: var(--bs-body-color);
+  padding: 0 5px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+  padding-right: 0.4rem;
+}
