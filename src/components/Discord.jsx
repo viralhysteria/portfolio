@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import fetchChannels from "@/utils/discordUtils";
-import styles from "@/styles/scss/discord.module.scss";
+import styles from "@/styles/scss/modules/discord.module.scss";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/animations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 const guild = process.env.discord_guild_id;
 
-export default function DiscordMarquee() {
+export default function Marquee() {
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
@@ -18,27 +20,38 @@ export default function DiscordMarquee() {
   }
 
   function channelMap() {
-    return channels.map((channel) => <li key={channel.id}>{channel.name}</li>);
+    return channels.map((channel) => (
+      <li key={channel.id}>
+        <span>{channel.name}</span>
+      </li>
+    ));
   }
 
   return (
-    <motion.div
+    <motion.footer
       className="fixed-bottom"
       onClick={inviteTrigger}
-      initial="0"
-      animate="1"
       variants={fadeIn}
+      initial="init"
+      animate="anim"
       transition={{
-        duration: 2,
-        ease: "easeInOut",
+        delay: 2,
+        duration: 1,
+        ease: "easeIn",
       }}
     >
-      <div className={styles.scroll}>
-        <ul>{channelMap()}</ul>
-        <ul aria-hidden="true" className={styles.scrollLoop}>
+      <div
+        className={`${styles.marquee} p-0 d-flex container-sm align-items-center overflow-hidden`}
+      >
+        <FontAwesomeIcon
+          icon={faDiscord}
+          className={`${styles.discordIcon} z-3 ms-2 p-1 rounded-2`}
+        ></FontAwesomeIcon>
+        <ul className="p-1 my-1">{channelMap()}</ul>
+        <ul className="p-1 my-1" aria-hidden="true">
           {channelMap()}
         </ul>
       </div>
-    </motion.div>
+    </motion.footer>
   );
 }

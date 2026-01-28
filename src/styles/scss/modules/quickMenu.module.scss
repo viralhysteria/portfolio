@@ -1,0 +1,122 @@
+$social-colors: (
+  1: hsl(162, 90%, 64%),
+  2: hsl(232, 90%, 64%),
+  3: hsl(201, 100%, 48%),
+  4: hsl(22, 62%, 50%),
+  5: hsl(265, 99%, 63%),
+);
+
+.quickMenu {
+  background: var(--bs-secondary-bg);
+  transition: background 0.3s linear;
+  // border-bottom: 1px solid var(--bs-tertiary-bg);
+}
+
+.nav {
+  max-width: 1440p;
+  
+  & a {
+    text-decoration: none;
+  }
+
+  & li {
+    padding: 0;
+    border-radius: 5px;
+
+    &:nth-child(4) {
+      margin-left: auto;
+    }
+
+    & span {
+      font-size: 1em;
+      vertical-align: 0.3em;
+      padding: 0 12px 0 4px;
+
+      & svg {
+        padding: 5px;
+      }
+    }
+
+    & span,
+    & label {
+      color: var(--bs-body-color);
+      text-transform: uppercase;
+
+      & svg {
+        color: var(--bs-body-color);
+        position: relative;
+        top: 5px;
+        margin-right: 3px;
+      }
+    }
+
+    &:not(:nth-of-type(4)):hover {
+      background: var(--bs-purple);
+      transition: background 0.2s ease-in;
+    }
+
+    &:not(:nth-of-type(4)):not(:hover) {
+      transition: background 0.2s ease-out;
+    }
+  }
+}
+
+.brand {
+  cursor: crosshair;
+
+  &:hover {
+    filter: invert(1);
+    transition: filter 0.5s ease;
+  }
+
+  &:not(:hover) {
+    transition: filter 0.5s ease;
+  }
+}
+
+.modal-footer {
+  ul a {
+    color: #f7f7f7;
+    padding: 0 5px !important;
+  }
+}
+
+.modal-footer {
+  ul a svg {
+    width: 2em;
+  }
+}
+
+.theme-toggle {
+  top: 0;
+  display: none;
+}
+
+.theme-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* .social-links a {
+  flex-basis: 25%;
+}
+
+.social-links a:first-child {
+  flex-basis: 77%;
+} */
+
+.social-icons {
+  a {
+    margin: 0 0.3em;
+    --fa-animation-iteration-count: 1;
+
+    @each $index, $color in $social-colors {
+      &:nth-of-type(#{$index}):hover {
+        color: $color;
+      }
+    }
+  }
+  & a:nth-child(1) {
+    margin: auto;
+  }
+}

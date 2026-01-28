@@ -3,13 +3,22 @@ import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
 import path from "path";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/animations";
 import { postsDir, postFilePaths } from "@/utils/helper/mdxUtils";
 
 export default function BlogIndex({ posts }) {
   return (
-    <div
-      className="d-flex flex-column align-items-center position-relative"
+    <motion.div
+      className="vw-100 d-flex flex-column align-items-center justify-content-center position-relative"
       style={{ top: 500 }}
+      variants={fadeIn}
+      initial="init"
+      animate="anim"
+      transition={{
+        duration: 1,
+        ease: "easeInOut",
+      }}
     >
       <Link href="/" legacyBehavior>
         home
@@ -35,7 +44,7 @@ export default function BlogIndex({ posts }) {
             );
           })}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 

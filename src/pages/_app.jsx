@@ -2,10 +2,14 @@ import Head from "next/head";
 import Layout from "@/components/Layout";
 
 import { useEffect } from "react";
+import { config } from '@fortawesome/fontawesome-svg-core'
 import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@/styles/global.css";
 import "@/styles/scss/main.scss";
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+config.autoAddCss = false
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -15,7 +19,6 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <title>viralhysteria</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -24,8 +27,6 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico?v=2" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-
-      <div className="d-flex"></div>
       <Component {...pageProps} />
     </Layout>
   );

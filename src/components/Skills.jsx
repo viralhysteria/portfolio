@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
-import Properties from "./include/Bubble";
-import styles from "@/styles/skills.module.css";
 import { randColor } from "@/utils/randColor";
 import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/animations";
+import { slideInFromBottom } from "@/utils/animations";
+import Properties from "./include/Bubble";
+import styles from "@/styles/scss/modules/skills.module.scss";
 
 function Bubble(Properties) {
   const [bubbleStyle, setBubbleStyle] = useState({});
   const [iconStyle, setIconStyle] = useState({});
   const [starColor, setStarColor] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   const rank = "★".repeat(Properties.rank);
   const stars = Array.from(rank).map((item, i) => {
@@ -29,20 +38,17 @@ function Bubble(Properties) {
     const mediaQueries = [
       { minWidth: 0, maxWidth: 767 },
       { minWidth: 768, maxWidth: 991 },
-      { minWidth: 992, maxWidth: 1920 },
-      { minWidth: 1921, maxWidth: 3780 },
       { minWidth: 800, maxWidth: 9999, minHeight: 1921 },
     ];
 
     const handleMediaQueryChange = (mediaQueryList, index) => {
       if (mediaQueryList.matches) {
         const bubbleWidth = 80 + index * 20;
-        const iconFontSize = 1 + index * 0.2;
+        const iconFontSize = 1.15 + index * 0.2;
 
         setBubbleStyle({
           width: `${bubbleWidth}px`,
           height: `${bubbleWidth}px`,
-          background: Properties.color,
         });
 
         setIconStyle({
@@ -81,44 +87,51 @@ function Bubble(Properties) {
     };
   }, [Properties.color]);
 
+  const glowColor = Properties.color.match(/#[a-fA-F0-9]{6}/);
+  const glowStyle = {
+    boxShadow: `0 0 25px ${glowColor}`,
+  };
+
   return (
     <div className="col-4">
       <div
-        className={`${styles.bubble} hvr-pulse select`}
+        className={`${styles.bubble} rounded-3 hvr-pulse select ${
+          isHovered ? "glowing" : ""
+        }`}
         data-bs-html="true"
-        style={{ ...bubbleStyle, background: `${Properties.color}` }}
+        style={{
+          ...bubbleStyle,
+          ...(isHovered ? glowStyle : null),
+          background: `${Properties.color}`,
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...(Properties.body
+          ? {
+              "data-bs-toggle": "modal",
+              "data-bs-target": `#${Properties.id}`,
+            }
+          : {})}
       >
-        {Properties.body ? (
-          <i
-            className={`${Properties.icon}`}
-            data-bs-toggle="modal"
-            data-bs-target={`#${Properties.id}Modal`}
-            style={iconStyle}
-          ></i>
-        ) : (
-          <i className={`${Properties.icon}`} style={iconStyle}></i>
-        )}
+        <i className={`${Properties.icon}`} style={iconStyle}></i>
       </div>
       {Properties.body ? (
         <div
-          id={`${Properties.id}Modal`}
+          id={`${Properties.id}`}
           className="modal fade"
           aria-hidden="true"
           data-bs-dismiss="modal"
           backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div className="modal-content overflow-visible">
-              <div className={`modal-body fw-normal text-end rounded mx-3`}>
-                <div className="modal-header position-relative">
-                  <h1
-                    id={`${Properties.id}ModalLabel`}
-                    className="modal-title text-start badge rounded-pill"
-                  >
-                    <span className="text-break">{Properties.title}</span>
-                    <hr />
-                  </h1>
-                </div>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h1 id={`${Properties.id}-Label`} className="modal-title">
+                  <span className="fs-1 text-break">{Properties.title}</span>
+                  <hr />
+                </h1>
+              </div>
+              <div className={`modal-body fw-normal mx-3`}>
                 {typeof Properties.body === "string" ? (
                   <div dangerouslySetInnerHTML={{ __html: Properties.body }} />
                 ) : (
@@ -151,20 +164,17 @@ export default function SkillsGrid() {
   }
 
   return (
-    <motion.main
-      className="position-relative overflow-visible h-100"
-      style={{ top: "12vh" }}
-      initial="0"
-      animate="1"
-      variants={slideInFromTop}
+    <motion.div
+      className={`${styles.skills} d-flex justify-content-center vw-100`}
+      variants={slideInFromBottom}
+      initial="init"
+      animate="anim"
       transition={{
-        duration: 3,
+        duration: 2,
         ease: "easeInOut",
       }}
     >
-      <div className={`${styles.skills} d-flex justify-content-center`}>
-        <div className={`${styles.icons}`}>{rows}</div>
-      </div>
-    </motion.main>
+      <div className={`${styles.icons}`}>{rows}</div>
+    </motion.div>
   );
 }

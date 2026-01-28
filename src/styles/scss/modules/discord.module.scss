@@ -1,0 +1,83 @@
+.container * {
+  box-sizing: border-box;
+}
+
+.marquee {
+  cursor: pointer;
+  --gap: 0.75rem;
+  color: var(--bs-body-color);
+  background: var(--bs-secondary-bg);
+  // outline: 1px solid var(--bs-tertiary-bg);
+  border-radius: 5px;
+  user-select: none;
+  gap: var(--gap);
+  margin-bottom: 2em;
+  transition: outline 0.3s linear, background 0.3s linear, color 0.3s linear;
+
+  ul {
+    list-style: none;
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--gap);
+    animation: scroll 80s linear infinite;
+
+    li span {
+      font-family: inherit;
+      font-size: 16px;
+      background: transparent;
+      opacity: 0.8;
+      padding: 0.2em 0.75em;
+      border-radius: 1em;
+
+      &:hover {
+        background: var(--bs-tertiary-bg);
+        transition: background 0.2s ease-in;
+      }
+
+      &:not(:hover) {
+        transition: background 0.2s ease-out;
+      }
+    }
+  }
+}
+
+.discordIcon {
+  background: #5764ef;
+  color: var(--bs-secondary-bg);
+
+  &:hover {
+    background: var(--bs-body-color);
+    transition: background 0.3s ease-in;
+  }
+
+  &:not(:hover) {
+    transition: background 0.3s ease-in;
+  }
+}
+
+@keyframes scroll-abs {
+  from {
+    transform: translateX(calc(100% + var(--gap)));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee ul {
+    animation-play-state: paused !important;
+    overflow-x: scroll;
+  }
+}

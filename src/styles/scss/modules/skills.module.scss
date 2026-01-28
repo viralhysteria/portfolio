@@ -1,0 +1,36 @@
+.skills,
+.icons {
+  padding: 20px;
+}
+
+.icons {
+  div {
+    padding: 8px 15px;
+  }
+}
+
+.bubble {
+  overflow: hidden;
+  user-select: none;
+  outline: 1px solid #06011150;
+  transition: outline 2s ease-in-out;
+  box-shadow: 0 2px 5px #00000075,
+    inset 0.05em 0.05em 0.05em 0 rgba(255, 255, 255, 0.5),
+    inset -0.05em -0.05em 0.05em 0 rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    filter: brightness(1.2);
+    transition: filter 0.3s linear, box-shadow 0.3s linear;
+  }
+
+  &:not(:hover) {
+    transition: filter 0.3s linear, box-shadow 0.3s linear;
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

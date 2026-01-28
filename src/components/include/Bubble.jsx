@@ -92,7 +92,7 @@ const Details = [
     id: "vg",
     icon: `${fs}-gamepad`,
     color: gradient.pink,
-    title: "Competitive Gaming",
+    title: "Gaming + Bugtesting",
     body: <Content.GamingBody />,
     rank: 5,
   },

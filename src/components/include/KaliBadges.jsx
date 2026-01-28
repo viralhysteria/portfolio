@@ -45,18 +45,14 @@ const KSMap = ({ items, colors }) => {
     const bgColor = colors[i];
     const style = { backgroundColor: bgColor };
     return (
-      <li
-        key={i}
-        className="fs-6 fw-semibold text-uppercase badge rounded m-1"
-        style={style}
-      >
+      <li key={i} className="fs-6 fw-semibold badge rounded m-1" style={style}>
         <span>{item}</span>
       </li>
     );
   });
 
   return (
-    <ul className="kaliBadges pt-2 justify-content-end">
+    <ul className="kaliBadges pt-2" style={{ padding: "0" }}>
       {KSBadges}
     </ul>
   );

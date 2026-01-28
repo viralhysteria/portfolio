@@ -1,12 +1,17 @@
 $enable-dark-mode: true;
+$enable-negative-margins: true;
+$modal-transition: transform 0.5s ease-in-out;
+$modal-fade-transform: scale(.5);
+$vr-border-width: 1px;
+$border-radius-lg: 1.2rem;
 
 @import "variables";
+@import "variables-dark";
 @import "~bootstrap/scss/bootstrap";
 @import "modal";
 
-.nav-link {
-  color: var(--bs-body-color);
-  padding: 0 5px;
+.vr {
+  color: $body-bg;
 }
 
 .breadcrumb {

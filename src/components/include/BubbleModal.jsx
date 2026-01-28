@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { randColor } from "@/utils/randColor";
 import { kaliStack, KSMap } from "./KaliBadges";
 
+const LeftAlign = ({ children }) => {
+  return <div className="text-start">{children}</div>;
+};
+
 export function KaliBody() {
   const [frameworkColors, setFrameworkColors] = useState([]);
   const [commandlineColors, setCommandlineColors] = useState([]);
@@ -24,29 +28,31 @@ export function KaliBody() {
       <span className="fs-5 fw-bold">Commandline</span>
       <KSMap items={kaliStack.commandline} colors={commandlineColors} />
       <hr />
-      <a
-        className="fs-6 mx-2 mb-2 badge rounded text-bg-danger text-decoration-none"
-        href="https://tryhackme.com/p/viralhysteria"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        TryHackMe
-      </a>
-      <a
-        className="fs-6 mx-2 mb-2 badge rounded text-bg-success text-decoration-none"
-        href="https://app.hackthebox.com/users/1564442"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        HackTheBox
-      </a>
+      <div className="d-flex justify-content-center mt-5 pentest-bootcamp border">
+        <a
+          className="fs-6 mx-2 my-2 badge rounded text-bg-danger text-decoration-none"
+          href="https://tryhackme.com/p/viralhysteria"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TryHackMe
+        </a>
+        <a
+          className="fs-6 mx-2 my-2 badge rounded text-bg-success text-decoration-none"
+          href="https://app.hackthebox.com/users/1564442"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          HackTheBox
+        </a>
+      </div>
     </>
   );
 }
 
 export function DesignBody() {
   return (
-    <>
+    <LeftAlign>
       <p>
         I&apos;m a graphic designer with a strong background in traditional art.
         I&apos;ve always had a passion for creating visually stunning designs
@@ -70,21 +76,14 @@ export function DesignBody() {
         knowledge, makes me a strong asset to any team seeking a skilled and
         passionate graphic designer.
       </p>
-    </>
+    </LeftAlign>
   );
 }
 
 export function TradingBody() {
   return (
-    <>
+    <LeftAlign>
       <p>
-        As all investors tend to do, I tried to find the closest thing to a holy
-        grail I could when trying to navigate the markets in a way that
-        wouldn&apos;t make me lose my head. I can&apos;t say what exactly drew
-        me to technical analysis out the gate, but I continue to constantly find
-        new things that keep me engaged.
-        <br />
-        <br />
         My journey as an analyst originally began focusing on a combination of
         fundamental and a poor foundation of technicals that eventually
         incorporated a sentiment aspect as well. After trying and failing to
@@ -113,13 +112,13 @@ export function TradingBody() {
           Bollinger Bands / AVWAP / VPVR / (Stoch+Std) RSI
         </span>
       </p>
-    </>
+    </LeftAlign>
   );
 }
 
 export function WindowsBody() {
   return (
-    <>
+    <LeftAlign>
       <p>
         I started using Windows-based PCs for the first time on a regular basis
         sometime around 2003 with XP. I took an early interest into web
@@ -129,11 +128,10 @@ export function WindowsBody() {
         <br />
         <br />
         Once I managed to get a slightly better PC, I started delving into
-        gaming and ended up with a virus called&apos;
+        gaming and ended up with a virus called{" "}&quot;
         <a href="https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Rogue:Win32/FakeSmoke&threatId=141916">
           WiniBlueSoft
-        </a>
-        &apos; from downloading a rogue torrent. This was the event that led me
+        </a>&quot;{" "}from downloading a rogue torrent. This was the event that led me
         to start digging more into the filesystem hierarchy in a drawn-out
         attempt to try and &quot;fight off&quot; the virus.
         <br />
@@ -143,13 +141,13 @@ export function WindowsBody() {
         operating system functions as a whole. This is what inevitably led me
         down the path I now find myself on.
       </p>
-    </>
+    </LeftAlign>
   );
 }
 
 export function GamingBody() {
   return (
-    <div className="container">
+    <div className="text-center">
       <Image
         className="img-fluid"
         width="400"
@@ -170,7 +168,7 @@ export function GamingBody() {
 
 export function StreamingBody() {
   return (
-    <>
+    <LeftAlign>
       <p>
         I&apos;m well acquainted with handling complex OBS scenes/setups to
         create aesthetically pleasing yet confluent designs. Livestreaming has
@@ -179,6 +177,6 @@ export function StreamingBody() {
         audiences as well as aiding me in developing stronger social skills
         through viewer engagement.
       </p>
-    </>
+    </LeftAlign>
   );
 }
